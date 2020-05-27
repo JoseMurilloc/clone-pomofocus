@@ -1,11 +1,15 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
+  width: 100vh;
+`;
+
+export const ContainerPomodoro = styled.div`
   min-width: 620px;
 `;
 
 export const SubContainer = styled.div`
-  height: 312px;
+  /* height: 312px; */
   width: 480px;
   margin: 0 auto;
 `;
@@ -173,3 +177,12 @@ export const AddTask = styled.div`
     color: #f5c2c0;
   }
 `;
+
+// export const Feed = styled.div`
+  
+//   background: #fff;
+//   h1 {
+//     font-size: 34px;
+//     color: #541c1f;
+//   }
+// `;

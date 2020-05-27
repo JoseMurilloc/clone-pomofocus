@@ -6,7 +6,7 @@ import { GoGraph } from 'react-icons/go';
 import { AiFillPlusCircle } from 'react-icons/ai';
 
 import { 
-  Container,
+  ContainerPomodoro,
   SubContainer,
   Header,
   Time, 
@@ -14,12 +14,14 @@ import {
   ButtonStart,
   LabelTimes,
   TaskOptions,
-  AddTask
+  AddTask,
+  Container
 } from './styles';
 
 function Main() {
   return (
     <Container>
+    <ContainerPomodoro>
       <Header>
         <h1>
           <MdCheckCircle size={25} color="#fff" />
@@ -72,6 +74,12 @@ function Main() {
           <span>Add Task</span>
         </AddTask>
       </SubContainer>
+    </ContainerPomodoro>
+    {/* <Feed>
+      <h1>
+        An online Pomodoro Timer to boost your productivity
+      </h1>
+    </Feed> */}
     </Container>
   );
 }
