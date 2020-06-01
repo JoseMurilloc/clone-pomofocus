@@ -10,8 +10,8 @@ export default createGlobalStyle`
   }
 
   body {
-    background: #f05b56;
-    color: #eee;
+    background: #fff;
+    height: 100vh;
   }
 
   html, body, button, input {
@@ -23,8 +23,8 @@ export default createGlobalStyle`
   }
 
   #root {
-    display: flex;
+    /* display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: center; */
   }
 `;

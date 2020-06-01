@@ -1,26 +1,60 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
-  width: 100vh;
+
+export const Title = styled.div`
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  margin: 0 auto;
+  margin-top: 50px;
+  margin-bottom: 20px;
+
+  width: 100%;
+  height: 98px;
+  color: #541c1f;
+  h1 {
+    width: 620px;
+  }
 `;
 
-export const ContainerPomodoro = styled.div`
-  min-width: 620px;
+export const Content = styled.div`
+  background: #fff;
+
+  /* display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; */
+`;
+
+export const Container = styled.div`
+  width: 100%;
+  background: #f05b56;
 `;
 
 export const SubContainer = styled.div`
   /* height: 312px; */
   width: 480px;
   margin: 0 auto;
+  min-height: 600px;
 `;
 
 export const Header = styled.div`
 
-  border-bottom: 1px solid #d8524d;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+  /* background: blue; */
+  width: 50%; 
+  margin: 0 auto;
+
+  div {
+    border-bottom: 1px solid #d8524d;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    color: #eee;
+  }
 
   h1 {
     padding: 20px;
@@ -38,7 +72,6 @@ export const Header = styled.div`
     display: flex;
     align-items: center;
   }
-
   div button {
     padding: 5px;
     border: 0;
@@ -59,6 +92,8 @@ export const Header = styled.div`
     border: 2px solid #f27874;
     border-radius: 4px;
   }
+
+
 `;
 
 
@@ -68,6 +103,7 @@ export const Time = styled.div`
   background: #f26c67;
   border-radius: 6px;
   padding: 50px 25px;
+  color: #eee;
 
   display: flex;
   flex-direction: column;
@@ -131,6 +167,7 @@ export const LabelTimes = styled.div`
   text-align: center;
   font-size: 18px;
   margin-bottom: 25px;
+  color: #eee;
 
 `;
 
@@ -141,8 +178,9 @@ export const TaskOptions = styled.div`
   justify-content: space-between;
   align-items: baseline;
   padding-bottom: 25px;
-
+  
   span {
+    color: #eee;
     font-size: 18px;
     font-weight: bold;
   }
