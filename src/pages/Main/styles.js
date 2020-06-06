@@ -77,6 +77,7 @@ export const Content = styled.div`
     
     ul {
       margin: 16px 0;
+      font-size: 16px;
 
       li {
         margin: 12px 0;
@@ -90,6 +91,7 @@ export const Content = styled.div`
       color: #7c6365;
       line-height: 1.6em;
       margin-top: 18px;
+      font-size: 18px;
 
       a {
         font-weight: bold;
@@ -132,7 +134,7 @@ export const Header = styled.div`
     font-size: 20px;
     display: flex;
     flex-direction: row;
-    align-items: center;
+    justify-content: baseline;
   }
 
   h1 svg {
@@ -144,10 +146,9 @@ export const Header = styled.div`
     align-items: center;
   }
   div button {
-    padding: 5px;
     border: 0;
     border-radius: 5px;
-    padding: 5px 10px;
+    padding: 5px 15px;
   
     display: flex;
     align-items: center;
@@ -159,7 +160,7 @@ export const Header = styled.div`
   }
 
   div img {
-    width: 28px;
+    width: 30px;
     border: 2px solid #f27874;
     border-radius: 4px;
   }

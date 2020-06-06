@@ -1,10 +1,10 @@
 import React from 'react';
 
 import { GrMoreVertical } from 'react-icons/gr';
-import { MdCheckCircle, MdSettings  } from 'react-icons/md'
+import { MdSettings  } from 'react-icons/md'
 import { GoGraph } from 'react-icons/go';
 import { AiFillPlusCircle, AiFillTwitterCircle } from 'react-icons/ai';
-import { FaFacebook, FaProductHunt } from 'react-icons/fa'
+import { FaCheckCircle, FaFacebook, FaProductHunt } from 'react-icons/fa'
 
 import { 
   SubContainer,
@@ -26,7 +26,7 @@ function Main() {
       <Header>
         <div>
           <h1>
-            <MdCheckCircle size={25} color="#fff" />
+            <FaCheckCircle size={20} color="#fff" />
             Pomodoro
           </h1>
 
