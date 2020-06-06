@@ -75,15 +75,37 @@ export const Content = styled.div`
       opacity: 0.6;
     }
     
-    ul {
+    ol {
       margin: 16px 0;
       font-size: 16px;
+      padding-left: 25px;
 
       li {
         margin: 12px 0;
         color: #785e60;
         line-height: 1.6em;
-        list-style: none;
+      }
+    }
+
+    ul {
+      margin: 16px 0;
+      font-size: 18px;
+      padding-left: 25px;
+
+      li {
+        margin: 12px 0;
+        color: #785e60;
+        line-height: 1.6em;
+        display: list-item;
+      }
+
+      li::before {
+        content: '';
+        color: red;
+        font-weight: bold;
+        display: inline-block; 
+        width: 1em;
+        margin-left: -1em;
       }
     }
 

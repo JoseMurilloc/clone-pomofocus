@@ -101,26 +101,26 @@ function Main() {
           <h2>
             How to use the Pomodoro Timer?
           </h2>
-          <ul>
+          <ol>
             <li>
-              1. <strong>Add tasks</strong> to work on today
+              <strong>Add tasks</strong> to work on today
             </li>
             <li>
-              2. <strong>Set estimate pomodoros</strong> (1 = 25min of work) for each tasks
+              <strong>Set estimate pomodoros</strong> (1 = 25min of work) for each tasks
             </li>
             <li>
-              3. <strong>Select a task</strong> to work on
+              <strong>Select a task</strong> to work on
             </li>
             <li>
-              4. <strong>Start timer</strong> and focus on the task for 25 minutes
+              <strong>Start timer</strong> and focus on the task for 25 minutes
             </li>
             <li>
-              5. <strong>Take a break</strong> for 5 minutes when the alarm ring
+              <strong>Take a break</strong> for 5 minutes when the alarm ring
             </li>
             <li>
-              6. <strong>Iterate</strong> 3-5 until you finish the tasks
+              <strong>Iterate</strong> 3-5 until you finish the tasks
             </li>
-          </ul>
+          </ol>
         </div>
         <div>
           <h2>Features</h2>
