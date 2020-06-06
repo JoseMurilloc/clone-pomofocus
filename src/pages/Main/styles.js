@@ -65,6 +65,15 @@ export const Content = styled.div`
       color: #5e2b2f;
       margin-top: 25px;
     }
+
+    h2::after {
+      content: '';
+      display: block;
+      width: 24px;
+      padding-top: 8px;
+      border-bottom: 4px solid #f05b56;
+      opacity: 0.6;
+    }
     
     ul {
       margin: 16px 0;
