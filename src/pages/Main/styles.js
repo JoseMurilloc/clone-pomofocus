@@ -141,9 +141,9 @@ export const Header = styled.div`
   /* background: blue; */
   width: 50%; 
   margin: 0 auto;
+  border-bottom: 1px solid #d8524d;
 
   div {
-    border-bottom: 1px solid #d8524d;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
