@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 
 import { GrMoreVertical } from 'react-icons/gr';
 import { MdSettings  } from 'react-icons/md'
@@ -21,6 +21,28 @@ import {
 } from './styles';
 
 function Main() {
+  const [time, setTime] = React.useState(25*60);
+  const [active, setActive] = React.useState(false);
+
+  const minutes = Math.floor(time / 60);
+  const seconds = time % 60;
+
+  const [minutesLeft, minutesRight] = String(minutes).padStart(2, '0').split('');
+
+  const [secondLeft, secondRight] = String(seconds).padStart(2, '0').split('');
+
+  function startCountdown() {
+    setActive(state => !state)
+  }
+
+  React.useEffect(() => {
+    if (active && time > 0) {
+      setTimeout(() => {
+        setTime(time - 1)
+      }, 1000)
+    }
+  }, [active, time])
+
   return (
     <Container>
       <Header>
@@ -59,10 +81,18 @@ function Main() {
             <ButtonOptional>Short Break</ButtonOptional>
             <ButtonOptional>Long Break</ButtonOptional>
           </div>
+          <div className="countDown">
+            <div>
+              <span>{minutesLeft}</span>
+              <span>{minutesRight}</span>
+            </div>
+            <span>:</span>
           <div>
-            <h2>25:00</h2>     
+            <span>{secondLeft}</span>
+            <span>{secondRight}</span>
           </div>
-          <ButtonStart>
+          </div>
+          <ButtonStart onClick={startCountdown}>
             START
           </ButtonStart>
 

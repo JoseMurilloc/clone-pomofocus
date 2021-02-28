@@ -213,6 +213,19 @@ export const Time = styled.div`
     font-size: 120px;
   }
 
+  .countDown {
+    /* background-color: red; */
+    padding-bottom: 12px;
+    width: 100%;
+    
+    span {
+      font-size: 120px;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+
+  }
+
 `;
 
 export const ButtonStart = styled.button`
