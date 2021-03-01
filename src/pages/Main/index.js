@@ -20,9 +20,12 @@ import {
   Footer
 } from './styles';
 
+import CountDownButton from '../../components/CountDownButton';
+
 function Main() {
   const [time, setTime] = React.useState(25*60);
   const [active, setActive] = React.useState(false);
+  const [activeButton, setActiveButton] = React.useState(false)
 
   const minutes = Math.floor(time / 60);
   const seconds = time % 60;
@@ -33,6 +36,7 @@ function Main() {
 
   function startCountdown() {
     setActive(state => !state)
+    setActiveButton(state => !state)
   }
 
   React.useEffect(() => {
@@ -92,9 +96,7 @@ function Main() {
             <span>{secondRight}</span>
           </div>
           </div>
-          <ButtonStart onClick={startCountdown}>
-            START
-          </ButtonStart>
+          <CountDownButton activeButton={activeButton} onClick={startCountdown} />
 
         </Time>
         <LabelTimes>
