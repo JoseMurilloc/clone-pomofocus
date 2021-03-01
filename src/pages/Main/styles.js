@@ -1,4 +1,228 @@
-import styled from 'styled-components';
+import styled, {css} from 'styled-components';
+
+// transition: background-color 0.5s ease-in-out 0s;
+
+export const Container = styled.div`
+  width: 100%;
+  ${props => props.typePomo === 'pomodoro' && css`
+    transition: background-color 0.5s ease-in-out 0s;
+    background: var(--color-primary-orange);
+  `}
+  ${props => props.typePomo === 'shot_break' && css`
+    transition: background-color 0.5s ease-in-out 0s;
+    background: var(--color-primary-green);
+  `}
+  ${props => props.typePomo === 'long_break' && css`
+    transition: background-color 0.5s ease-in-out 0s;
+    background: var(--color-primary-blue);
+  `}
+`;
+
+export const SubContainer = styled.div`
+  width: 480px;
+  margin: 0 auto;
+  min-height: 600px;
+`;
+
+export const Header = styled.div`
+
+  width: 45%;
+  height: 60px;
+  margin: 0 auto;
+
+  ${props => props.typePomo === 'pomodoro' && css`
+    transition: border-bottom 0.5s ease-in-out 0s;
+    border-bottom: 1px solid var(--color-header-border-orange);
+  `}
+  ${props => props.typePomo === 'shot_break' && css`
+    transition: border-bottom 0.5s ease-in-out 0s;
+    border-bottom: 1px solid var(--color-header-border-green);
+  `}
+  ${props => props.typePomo === 'long_break' && css`
+    transition: border-bottom 0.5s ease-in-out 0s;
+    border-bottom: 1px solid var(--color-header-border-blue);
+  `}
+
+  div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    color: #eee;
+  }
+
+  h1 {
+    padding: 20px;
+    font-size: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: baseline;
+  }
+
+  h1 svg {
+    margin-right: 5px;
+  }
+
+  div {
+    display: flex;
+    align-items: center;
+  }
+  div button {
+    border: 0;
+    border-radius: 5px;
+    padding: 5px 15px;
+  
+    display: flex;
+    align-items: center;
+    color: #eee;
+
+    margin-right: 10px;
+    /* background-color: var(--color-secondary-orange); */
+
+    ${props => props.typePomo === 'pomodoro' && css`
+      transition: background-color 0.5s ease-in-out 0s;
+      background-color: var(--color-secondary-orange);
+    `}
+    ${props => props.typePomo === 'shot_break' && css`
+      transition: background-color 0.5s ease-in-out 0s;
+      background-color: var(--color-secondary-green);
+    `}
+    ${props => props.typePomo === 'long_break' && css`
+     transition: background-color 0.5s ease-in-out 0s;
+      background-color: var(--color-secondary-blue);
+    `}
+
+  }
+
+  div img {
+    width: 30px;
+    border-radius: 4px;
+
+    ${props => props.typePomo === 'pomodoro' && css`
+      transition: border 0.5s ease-in-out 0s;
+      border: 2px solid var(--color-secondary-orange);    
+    `}
+    ${props => props.typePomo === 'shot_break' && css`
+      transition: border 0.5s ease-in-out 0s;
+      border: 2px solid var(--color-secondary-green);    
+    `}
+    ${props => props.typePomo === 'long_break' && css`
+      transition: border 0.5s ease-in-out 0s;
+      border: 2px solid var(--color-secondary-blue);    
+    `}
+  }
+
+
+`;
+
+
+export const Time = styled.div`
+  margin-top: 50px;
+
+  ${props => props.typePomo === 'pomodoro' && css`
+    transition: border background-color 0.5s ease-in-out 0s;
+    border: 1px solid var(--color-secondary-orange);
+    background-color: var(--color-secondary-orange);  
+  `}
+  ${props => props.typePomo === 'shot_break' && css`
+    transition: border background-color 0.5s ease-in-out 0s;
+    border: 1px solid var(--color-secondary-green);
+    background-color: var(--color-secondary-green);  
+  `}
+  ${props => props.typePomo === 'long_break' && css`
+    transition: border background-color 0.5s ease-in-out 0s;
+    border: 1px solid var(--color-secondary-blue);
+    background-color: var(--color-secondary-blue);  
+  `}
+
+  border-radius: 6px;
+  padding: 25px 12px;
+  color: #eee;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  div h2 {
+    font-size: 120px;
+  }
+
+  .countDown {
+    padding-bottom: 12px;
+    width: 100%;
+    
+    span {
+      font-size: 120px;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+
+  }
+
+`;
+
+
+export const LabelTimes = styled.div`
+  margin-top: 30px;
+
+  text-align: center;
+  font-size: 18px;
+  margin-bottom: 25px;
+  color: #eee;
+
+`;
+
+export const TaskOptions = styled.div`
+
+  border-bottom: 2px solid rgba(255, 255, 255, 0.6);
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding-bottom: 25px;
+  
+  span {
+    color: #eee;
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  button {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    /* padding: 8px; */
+    border-radius: 6px;
+  }
+
+  button svg {
+    margin: 5px;
+  }
+`;
+
+export const AddTask = styled.div`
+  margin-top: 12px;
+  border: 2px dashed rgba(255, 255, 255, 0.4);
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  cursor: pointer;
+
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  span {
+    font-weight: bold;
+    margin-left: 10px;
+    color: #fff;
+  }
+`;
+
 
 export const Footer = styled.div`
   border: 2px solid #efefef;
@@ -71,7 +295,7 @@ export const Content = styled.div`
       display: block;
       width: 24px;
       padding-top: 8px;
-      border-bottom: 4px solid #f05b56;
+      border-bottom: 4px solid var(--color-primary-orange);
       opacity: 0.6;
     }
     
@@ -124,134 +348,6 @@ export const Content = styled.div`
   }
 `;
 
-export const Container = styled.div`
-  width: 100%;
-  background: #f05b56;
-`;
-
-export const SubContainer = styled.div`
-  /* height: 312px; */
-  width: 480px;
-  margin: 0 auto;
-  min-height: 600px;
-`;
-
-export const Header = styled.div`
-
-  /* background: blue; */
-  width: 50%; 
-  margin: 0 auto;
-  border-bottom: 1px solid #d8524d;
-
-  div {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    color: #eee;
-  }
-
-  h1 {
-    padding: 20px;
-    font-size: 20px;
-    display: flex;
-    flex-direction: row;
-    justify-content: baseline;
-  }
-
-  h1 svg {
-    margin-right: 5px;
-  }
-
-  div {
-    display: flex;
-    align-items: center;
-  }
-  div button {
-    border: 0;
-    border-radius: 5px;
-    padding: 5px 15px;
-  
-    display: flex;
-    align-items: center;
-    color: #eee;
-
-    margin-right: 10px;
-    background: #f27874;
-
-  }
-
-  div img {
-    width: 30px;
-    border: 2px solid #f27874;
-    border-radius: 4px;
-  }
-
-
-`;
-
-
-export const Time = styled.div`
-  margin-top: 50px;
-  border: 1px solid #f26c67;
-  background: #f26c67;
-  border-radius: 6px;
-  padding: 50px 25px;
-  color: #eee;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  div {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  div h2 {
-    font-size: 120px;
-  }
-
-  .countDown {
-    /* background-color: red; */
-    padding-bottom: 12px;
-    width: 100%;
-    
-    span {
-      font-size: 120px;
-      font-weight: bold;
-      margin-top: 20px;
-    }
-
-  }
-
-`;
-
-export const ButtonStart = styled.button`
-  background: #fff;
-  color: #ce5c58;
-
-  border: 0;
-  border-radius: 6px;
-
-  font-size: 22px;
-  font-weight: bold;
-
-  margin: 20px 0 0;
-  padding: 0 12px;
-  box-shadow: 0 9px #ebebeb;
-
-  height: 55px;
-  width: 200px;
-
-  &:active {
-    box-shadow: 0 5px #ebebeb;
-    transform: translateY(4px);
-  }
-
-`;
-
 
 export const ButtonOptional = styled.button`
   background: transparent;
@@ -261,73 +357,12 @@ export const ButtonOptional = styled.button`
   font-size: 16px;
   padding: 5px 12px;
   border-radius: 6px;
-  background: #ce5c58;
+  
+  ${props => props.enableButton && css`
+    background: rgba(0, 0, 0, 0.15);
+  `};
   
   & + button {
     margin-left: 20px;
   }
 `;
-
-export const LabelTimes = styled.div`
-  margin-top: 30px;
-
-  text-align: center;
-  font-size: 18px;
-  margin-bottom: 25px;
-  color: #eee;
-
-`;
-
-export const TaskOptions = styled.div`
-
-  border-bottom: 2px solid #f9bdbb;
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  padding-bottom: 25px;
-  
-  span {
-    color: #eee;
-    font-size: 18px;
-    font-weight: bold;
-  }
-
-  button {
-    background: #f27874;
-    border: none;
-    /* padding: 8px; */
-    border-radius: 6px;
-  }
-
-  button svg {
-    margin: 5px;
-  }
-`;
-
-export const AddTask = styled.div`
-  margin-top: 12px;
-  border: 2px dashed #e98b88;
-  background: #dd534f;
-  border-radius: 6px;
-  cursor: pointer;
-
-  height: 60px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  span {
-    font-weight: bold;
-    margin-left: 10px;
-    color: #f5c2c0;
-  }
-`;
-
-// export const Feed = styled.div`
-  
-//   background: #fff;
-//   h1 {
-//     font-size: 34px;
-//     color: #541c1f;
-//   }
-// `;

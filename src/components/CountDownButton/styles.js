@@ -2,7 +2,10 @@ import styled, {css} from 'styled-components';
 
 export const Container = styled.button`
   background: #fff;
-  color: #ce5c58;
+
+  ${props => props.typePomo === 'pomodoro' && css`color: var(--color-primary-orange);`}
+  ${props => props.typePomo === 'shot_break' && css`color: var(--color-primary-green);`}
+  ${props => props.typePomo === 'long_break' && css`color: var(--color-primary-blue);`}
 
   border: 0;
   border-radius: 6px;

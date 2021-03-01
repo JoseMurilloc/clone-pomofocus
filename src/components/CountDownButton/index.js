@@ -2,9 +2,9 @@ import * as React from 'react';
 
 import { Container } from './styles';
 
-function CountDownButton({ children, startCountdown, activeButton, ...rest }) {
+function CountDownButton({ children, startCountdown, typePomo, activeButton, ...rest }) {
   return (
-    <Container activeButton={activeButton} onClick={startCountdown} {...rest}>
+    <Container typePomo={typePomo} activeButton={activeButton} onClick={startCountdown} {...rest}>
       {!activeButton ? 'START' : 'STOP'}
     </Container>
   )

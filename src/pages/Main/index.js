@@ -3,15 +3,16 @@ import * as React from 'react';
 import { GrMoreVertical } from 'react-icons/gr';
 import { MdSettings  } from 'react-icons/md'
 import { GoGraph } from 'react-icons/go';
-import { AiFillPlusCircle, AiFillTwitterCircle } from 'react-icons/ai';
+import { AiFillTwitterCircle } from 'react-icons/ai';
+import { FaPlusCircle } from 'react-icons/fa';
 import { FaCheckCircle, FaFacebook, FaProductHunt } from 'react-icons/fa'
+
 
 import { 
   SubContainer,
   Header,
   Time, 
   ButtonOptional,
-  ButtonStart,
   LabelTimes,
   TaskOptions,
   AddTask,
@@ -22,22 +23,61 @@ import {
 
 import CountDownButton from '../../components/CountDownButton';
 
+
 function Main() {
+  const [typePomo, setTypePomo] = React.useState('pomodoro')
   const [time, setTime] = React.useState(25*60);
   const [active, setActive] = React.useState(false);
   const [activeButton, setActiveButton] = React.useState(false)
 
-  const minutes = Math.floor(time / 60);
-  const seconds = time % 60;
+  const {minutes, seconds} = React.useMemo(() => {
+    const minutes = Math.floor(time / 60);
+    const seconds = time % 60;
 
-  const [minutesLeft, minutesRight] = String(minutes).padStart(2, '0').split('');
+    return { minutes, seconds}
+  }, [time])
 
-  const [secondLeft, secondRight] = String(seconds).padStart(2, '0').split('');
+  const [minutesLeft, minutesRight] = React.useMemo(() => {
+    return String(minutes).padStart(2, '0').split('');
+  }, [minutes])
 
-  function startCountdown() {
+  const [secondLeft, secondRight] = React.useMemo(() => {
+    return String(seconds).padStart(2, '0').split('');
+  }, [seconds])
+
+  const startCountdown = React.useCallback(() => {
     setActive(state => !state)
     setActiveButton(state => !state)
-  }
+  }, [])
+
+  const handleEnablePomodoroButton = React.useCallback(() => {
+    return typePomo === 'pomodoro'    
+  }, [typePomo])
+
+  const handleEnableShotBreakButton = React.useCallback(() => {
+    return typePomo === 'shot_break'
+  }, [typePomo])
+
+  const handleEnableLongBreakButton = React.useCallback(() => {
+    return typePomo === 'long_break'
+  }, [typePomo])
+
+  React.useEffect(() => {
+    switch (typePomo) {
+      case 'pomodoro':
+        setTime(25*60);
+        return;
+      case 'shot_break':
+        setTime(5*60);
+        return;
+      case 'long_break':
+        setTime(15*60);
+        return;
+      default:
+        setTime(25*60);
+        return;
+    }
+  }, [typePomo])
 
   React.useEffect(() => {
     if (active && time > 0) {
@@ -47,9 +87,10 @@ function Main() {
     }
   }, [active, time])
 
+
   return (
-    <Container>
-      <Header>
+    <Container typePomo={typePomo}>
+      <Header typePomo={typePomo}>
         <div>
           <h1>
             <FaCheckCircle size={20} color="#fff" />
@@ -79,11 +120,26 @@ function Main() {
       </Header>
       
       <SubContainer>
-        <Time>
+        <Time typePomo={typePomo}>
           <div>
-            <ButtonOptional>Pomodoro</ButtonOptional>
-            <ButtonOptional>Short Break</ButtonOptional>
-            <ButtonOptional>Long Break</ButtonOptional>
+            <ButtonOptional 
+              enableButton={handleEnablePomodoroButton()} 
+              onClick={() => setTypePomo('pomodoro')}
+            >
+            Pomodoro
+            </ButtonOptional>
+            <ButtonOptional 
+              enableButton={handleEnableShotBreakButton()}
+              onClick={() => setTypePomo('shot_break')} 
+            >
+            Short Break
+            </ButtonOptional>
+            <ButtonOptional 
+              enableButton={handleEnableLongBreakButton()} 
+              onClick={() => setTypePomo('long_break')}
+            >
+            Long Break
+            </ButtonOptional>
           </div>
           <div className="countDown">
             <div>
@@ -96,7 +152,11 @@ function Main() {
             <span>{secondRight}</span>
           </div>
           </div>
-          <CountDownButton activeButton={activeButton} onClick={startCountdown} />
+          <CountDownButton 
+            typePomo={typePomo}
+            activeButton={activeButton}
+            onClick={startCountdown} 
+          />
 
         </Time>
         <LabelTimes>
@@ -109,7 +169,7 @@ function Main() {
           </button>
         </TaskOptions>
         <AddTask>
-          <AiFillPlusCircle size={20} color="#f5c2c0" />
+          <FaPlusCircle size={20} color="#fff" />
           <span>Add Task</span>
         </AddTask>
       </SubContainer>
@@ -166,29 +226,29 @@ function Main() {
 
         
       </Content>
-        <Footer>
-          <div>
-            <span>HOME</span>
-            <span>PRIVACY</span>
-          </div>
-          <div>
-            <a href="/">
-              <FaFacebook size={45} color="#999999" />
-            </a>
-            <a href="/">
-              <AiFillTwitterCircle size={45} color="#999999" />
-            </a>
-            <a href="/">
-              <FaProductHunt size={45} color="#999999" />
-            </a>
-          </div>
-          <div>
-            Made with s2 by <strong>Yuya Uzu</strong>
-          </div>
-          <div>
-            <small>©Pomofocus 2019. All Rights Reserved.</small>
-          </div>
-        </Footer>
+      <Footer>
+        <div>
+          <span>HOME</span>
+          <span>PRIVACY</span>
+        </div>
+        <div>
+          <a href="/">
+            <FaFacebook size={45} color="#999999" />
+          </a>
+          <a href="/">
+            <AiFillTwitterCircle size={45} color="#999999" />
+          </a>
+          <a href="/">
+            <FaProductHunt size={45} color="#999999" />
+          </a>
+        </div>
+        <div>
+          Made with s2 by <strong>Yuya Uzu</strong>
+        </div>
+        <div>
+          <small>©Pomofocus 2019. All Rights Reserved.</small>
+        </div>
+      </Footer>
     </Container>
   );
 }

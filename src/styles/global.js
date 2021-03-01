@@ -23,8 +23,16 @@ export default createGlobalStyle`
   }
 
   #root {
-    /* display: flex;
-    align-items: center;
-    justify-content: center; */
+    --color-primary-orange: #f05b56;
+    --color-secondary-orange: #f27874;
+    --color-header-border-orange: #d8524d;
+
+    --color-primary-green: #468e92;
+    --color-secondary-green: #67a3a5;
+    --color-header-border-green: #3c8184;
+    
+    --color-primary-blue: #437ea8;
+    --color-secondary-blue: #6595b9;
+    --color-header-border-blue: #497696;
   }
 `;
