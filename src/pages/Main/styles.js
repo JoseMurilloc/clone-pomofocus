@@ -94,7 +94,11 @@ export const Header = styled.div`
 
   }
 
-  div img {
+  .buttonNoneExistStyle {
+    background-color: transparent;
+  }
+
+  div button > img {
     width: 30px;
     border-radius: 4px;
 

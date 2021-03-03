@@ -2,11 +2,14 @@ import * as React from 'react';
 
 import { GrMoreVertical } from 'react-icons/gr';
 import { MdSettings  } from 'react-icons/md'
+
 import { GoGraph } from 'react-icons/go';
 import { AiFillTwitterCircle } from 'react-icons/ai';
 import { FaPlusCircle } from 'react-icons/fa';
 import { FaCheckCircle, FaFacebook, FaProductHunt } from 'react-icons/fa'
 
+import Profile from '../../components/Profile';
+import MenuProfile from '../../components/MenuProfile';
 
 import { 
   SubContainer,
@@ -18,7 +21,7 @@ import {
   AddTask,
   Container,
   Content,
-  Footer
+  Footer,
 } from './styles';
 
 import CountDownButton from '../../components/CountDownButton';
@@ -28,7 +31,8 @@ function Main() {
   const [typePomo, setTypePomo] = React.useState('pomodoro')
   const [time, setTime] = React.useState(25*60);
   const [active, setActive] = React.useState(false);
-  const [activeButton, setActiveButton] = React.useState(false)
+  const [activeButton, setActiveButton] = React.useState(false);
+  const [visibleMenuProfile, setVisibleMenuProfile] = React.useState(false);
 
   const {minutes, seconds} = React.useMemo(() => {
     const minutes = Math.floor(time / 60);
@@ -90,6 +94,9 @@ function Main() {
 
   return (
     <Container typePomo={typePomo}>
+      <Profile visible />
+      <MenuProfile visibleMenuProfile={visibleMenuProfile} />
+
       <Header typePomo={typePomo}>
         <div>
           <h1>
@@ -107,10 +114,16 @@ function Main() {
               Setting
             </button>
 
-            <img 
-              src="https://lh3.googleusercontent.com/a-/AOh14Ggsx2eT_A6emvGukBj5QrwRCqyJNSxD-5j5FvFLpw=s96-c" 
-              alt="profile"
-            />
+            <button
+              className="buttonNoneExistStyle"
+              onClick={() => setVisibleMenuProfile(state => !state)}
+            >
+              <img 
+                src="https://lh3.googleusercontent.com/a-/AOh14Ggsx2eT_A6emvGukBj5QrwRCqyJNSxD-5j5FvFLpw=s96-c" 
+                alt="profile"
+              />
+
+            </button>
           </div>
 
         </div>
