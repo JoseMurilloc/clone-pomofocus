@@ -1,8 +1,10 @@
 import styled, {css} from 'styled-components';
 
-// transition: background-color 0.5s ease-in-out 0s;
+type typeProps = {
+  typePomo: 'pomodoro' | 'shot_break' | 'long_break'
+} 
 
-export const Container = styled.div`
+export const Container = styled.div<typeProps>`
   width: 100%;
   ${props => props.typePomo === 'pomodoro' && css`
     transition: background-color 0.5s ease-in-out 0s;
@@ -24,8 +26,7 @@ export const SubContainer = styled.div`
   min-height: 600px;
 `;
 
-export const Header = styled.div`
-
+export const Header = styled.div<typeProps>`
   width: 45%;
   height: 60px;
   margin: 0 auto;
@@ -120,7 +121,7 @@ export const Header = styled.div`
 `;
 
 
-export const Time = styled.div`
+export const Time = styled.div<typeProps>`
   margin-top: 50px;
 
   ${props => props.typePomo === 'pomodoro' && css`
@@ -352,8 +353,11 @@ export const Content = styled.div`
   }
 `;
 
+type ButtonOptionalProps = {
+  enableButton: boolean,
+}
 
-export const ButtonOptional = styled.button`
+export const ButtonOptional = styled.button<ButtonOptionalProps>`
   background: transparent;
   color: #eee;
   font-weight: bold;

@@ -8,7 +8,7 @@ import { AiFillTwitterCircle } from 'react-icons/ai';
 import { FaPlusCircle } from 'react-icons/fa';
 import { FaCheckCircle, FaFacebook, FaProductHunt } from 'react-icons/fa'
 
-import Profile from '../../components/Profile';
+// import Profile from '../../components/Profile';
 import MenuProfile from '../../components/MenuProfile';
 
 import { 
@@ -26,9 +26,9 @@ import {
 
 import CountDownButton from '../../components/CountDownButton';
 
-
 function Main() {
-  const [typePomo, setTypePomo] = React.useState('pomodoro')
+  const [typePomo, setTypePomo] = 
+    React.useState<'pomodoro' | 'shot_break' | 'long_break'>('pomodoro')
   const [time, setTime] = React.useState(25*60);
   const [active, setActive] = React.useState(false);
   const [activeButton, setActiveButton] = React.useState(false);
@@ -94,8 +94,8 @@ function Main() {
 
   return (
     <Container typePomo={typePomo}>
-      <Profile visible />
-      <MenuProfile visibleMenuProfile={visibleMenuProfile} />
+      {/* <Profile enableVisible={true} /> */}
+      {visibleMenuProfile && <MenuProfile />}
 
       <Header typePomo={typePomo}>
         <div>
@@ -170,7 +170,6 @@ function Main() {
             activeButton={activeButton}
             onClick={startCountdown} 
           />
-
         </Time>
         <LabelTimes>
           <span>Time to work!</span>

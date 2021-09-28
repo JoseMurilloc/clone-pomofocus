@@ -1,6 +1,12 @@
 import styled, {css} from 'styled-components';
 
-export const Container = styled.button`
+
+type ContainerProps = {
+  activeButton: boolean,
+  typePomo: 'pomodoro' | 'shot_break' | 'long_break' 
+}
+
+export const Container = styled.button<ContainerProps>`
   background: #fff;
 
   ${props => props.typePomo === 'pomodoro' && css`color: var(--color-primary-orange);`}

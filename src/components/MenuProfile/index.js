@@ -7,9 +7,9 @@ import {FaUser} from 'react-icons/fa';
 import {GoRocket} from 'react-icons/go'
 import {RiDeleteBin6Line} from 'react-icons/ri'
 
-const MenuProfile = ({visibleMenuProfile}) => {
+const MenuProfile = () => {
   return (
-    <Container visibleMenuProfile={visibleMenuProfile}>
+    <Container>
       <ul>
       <li>
         <FaUser size={16} color="#333" />

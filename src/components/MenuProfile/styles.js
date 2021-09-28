@@ -1,4 +1,4 @@
-import styled, {css} from 'styled-components';
+import styled from 'styled-components';
 
 export const Container = styled.div`
   width: 200px;
@@ -10,12 +10,6 @@ export const Container = styled.div`
   position: absolute;
   right: 360px;
   top: 60px;
-
-  ${props => props.visibleMenuProfile ? css`
-    opacity: 1;
-  ` : css`
-    opacity: 0;
-  `}
 
   ul {
     text-decoration: none;
