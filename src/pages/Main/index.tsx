@@ -55,16 +55,15 @@ function Main() {
   }, [])
 
   const handleEnablePomodoroButton = React.useCallback(() => {
-    return typePomo === 'pomodoro'    
+    if (typePomo === 'pomodoro' 
+      || typePomo === 'shot_break' 
+      || typePomo === 'long_break') {
+        return true
+    } else {
+      return false
+    } 
   }, [typePomo])
 
-  const handleEnableShotBreakButton = React.useCallback(() => {
-    return typePomo === 'shot_break'
-  }, [typePomo])
-
-  const handleEnableLongBreakButton = React.useCallback(() => {
-    return typePomo === 'long_break'
-  }, [typePomo])
 
   React.useEffect(() => {
     switch (typePomo) {
@@ -131,24 +130,26 @@ function Main() {
 
         
       </Header>
-      
       <SubContainer>
         <Time typePomo={typePomo}>
           <div>
             <ButtonOptional 
+              disabled={activeButton}
               enableButton={handleEnablePomodoroButton()} 
               onClick={() => setTypePomo('pomodoro')}
             >
-            Pomodoro
+              Pomodoro
             </ButtonOptional>
-            <ButtonOptional 
-              enableButton={handleEnableShotBreakButton()}
+            <ButtonOptional
+              disabled={activeButton}  
+              enableButton={handleEnablePomodoroButton()}
               onClick={() => setTypePomo('shot_break')} 
             >
-            Short Break
+              Short Break
             </ButtonOptional>
-            <ButtonOptional 
-              enableButton={handleEnableLongBreakButton()} 
+            <ButtonOptional
+              disabled={activeButton} 
+              enableButton={handleEnablePomodoroButton()} 
               onClick={() => setTypePomo('long_break')}
             >
             Long Break

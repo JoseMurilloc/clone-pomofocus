@@ -1,8 +1,7 @@
 import React from 'react';
 
-import { Container } from './styles';
-
-import { FiLogOut } from 'react-icons/fi';
+import {Container} from './styles';
+import {FiLogOut} from 'react-icons/fi';
 import {FaUser} from 'react-icons/fa';
 import {GoRocket} from 'react-icons/go'
 import {RiDeleteBin6Line} from 'react-icons/ri'
