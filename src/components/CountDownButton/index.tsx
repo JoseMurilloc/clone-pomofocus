@@ -3,7 +3,7 @@ import React, { ButtonHTMLAttributes } from 'react';
 import { Container } from './styles';
 
 interface CountDownButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  typePomo: 'pomodoro' | 'shot_break' | 'long_break'
+  typePomo: 'pomodoro' | 'short_break' | 'long_break'
   activeButton: boolean
   startCountdown?: () => void; 
 }
@@ -14,7 +14,12 @@ function CountDownButton({
 }: CountDownButtonProps) {
 
   return (
-    <Container typePomo={typePomo} activeButton={activeButton} onClick={startCountdown} {...rest}>
+    <Container 
+      typePomo={typePomo} 
+      activeButton={activeButton} 
+      onClick={startCountdown} 
+      {...rest}
+    >
       {!activeButton ? 'START' : 'STOP'}
     </Container>
   )

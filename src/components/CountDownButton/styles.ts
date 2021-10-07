@@ -3,14 +3,14 @@ import styled, {css} from 'styled-components';
 
 type ContainerProps = {
   activeButton: boolean,
-  typePomo: 'pomodoro' | 'shot_break' | 'long_break' 
+  typePomo: 'pomodoro' | 'short_break' | 'long_break' 
 }
 
 export const Container = styled.button<ContainerProps>`
   background: #fff;
 
   ${props => props.typePomo === 'pomodoro' && css`color: var(--color-primary-orange);`}
-  ${props => props.typePomo === 'shot_break' && css`color: var(--color-primary-green);`}
+  ${props => props.typePomo === 'short_break' && css`color: var(--color-primary-green);`}
   ${props => props.typePomo === 'long_break' && css`color: var(--color-primary-blue);`}
 
   border: 0;
