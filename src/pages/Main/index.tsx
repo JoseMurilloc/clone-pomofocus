@@ -1,5 +1,4 @@
-import * as React from 'react';
-
+import React, { useCallback, useEffect } from 'react';
 import { GrMoreVertical } from 'react-icons/gr';
 import { MdSettings  } from 'react-icons/md'
 
@@ -10,12 +9,12 @@ import { FaCheckCircle, FaFacebook, FaProductHunt } from 'react-icons/fa'
 
 // import Profile from '../../components/Profile';
 import MenuProfile from '../../components/MenuProfile';
+import { ButtonOptional } from '../../components/ButtonOptional'
 
 import { 
   SubContainer,
   Header,
   Time, 
-  ButtonOptional,
   LabelTimes,
   TaskOptions,
   AddTask,
@@ -28,7 +27,7 @@ import CountDownButton from '../../components/CountDownButton';
 
 function Main() {
   const [typePomo, setTypePomo] = 
-    React.useState<'pomodoro' | 'shot_break' | 'long_break'>('pomodoro')
+    React.useState<'pomodoro' | 'short_break' | 'long_break'>('pomodoro')
   const [time, setTime] = React.useState(25*60);
   const [active, setActive] = React.useState(false);
   const [activeButton, setActiveButton] = React.useState(false);
@@ -54,23 +53,18 @@ function Main() {
     setActiveButton(state => !state)
   }, [])
 
-  const handleEnablePomodoroButton = React.useCallback(() => {
-    if (typePomo === 'pomodoro' 
-      || typePomo === 'shot_break' 
-      || typePomo === 'long_break') {
-        return true
-    } else {
-      return false
-    } 
-  }, [typePomo])
 
 
-  React.useEffect(() => {
+  const handleOnClickButtonOptions = useCallback(() => {
+
+  }, [])
+
+  useEffect(() => {
     switch (typePomo) {
       case 'pomodoro':
         setTime(25*60);
         return;
-      case 'shot_break':
+      case 'short_break':
         setTime(5*60);
         return;
       case 'long_break':
@@ -83,7 +77,7 @@ function Main() {
   }, [typePomo])
 
   React.useEffect(() => {
-    if (active && time > 0) {
+    if (active && time > 0) { 
       setTimeout(() => {
         setTime(time - 1)
       }, 1000)
@@ -134,26 +128,26 @@ function Main() {
         <Time typePomo={typePomo}>
           <div>
             <ButtonOptional 
-              disabled={activeButton}
-              enableButton={handleEnablePomodoroButton()} 
-              onClick={() => setTypePomo('pomodoro')}
-            >
-              Pomodoro
-            </ButtonOptional>
+              activeButton={activeButton}
+              status="pomodoro"
+              label="Pomodoro"
+              typePomo={typePomo}
+              setTypePomo={setTypePomo}
+            />
             <ButtonOptional
-              disabled={activeButton}  
-              enableButton={handleEnablePomodoroButton()}
-              onClick={() => setTypePomo('shot_break')} 
-            >
-              Short Break
-            </ButtonOptional>
+              activeButton={activeButton}
+              status="short_break"
+              label="Short break"
+              typePomo={typePomo}
+              setTypePomo={setTypePomo}
+            />
             <ButtonOptional
-              disabled={activeButton} 
-              enableButton={handleEnablePomodoroButton()} 
-              onClick={() => setTypePomo('long_break')}
-            >
-            Long Break
-            </ButtonOptional>
+              activeButton={activeButton}
+              status="long_break"
+              label="Long break"
+              typePomo={typePomo}
+              setTypePomo={setTypePomo}
+            />
           </div>
           <div className="countDown">
             <div>

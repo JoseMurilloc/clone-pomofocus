@@ -1,7 +1,7 @@
 import styled, {css} from 'styled-components';
 
 type typeProps = {
-  typePomo: 'pomodoro' | 'shot_break' | 'long_break'
+  typePomo: 'pomodoro' | 'short_break' | 'long_break'
 } 
 
 export const Container = styled.div<typeProps>`
@@ -10,7 +10,7 @@ export const Container = styled.div<typeProps>`
     transition: background-color 0.5s ease-in-out 0s;
     background: var(--color-primary-orange);
   `}
-  ${props => props.typePomo === 'shot_break' && css`
+  ${props => props.typePomo === 'short_break' && css`
     transition: background-color 0.5s ease-in-out 0s;
     background: var(--color-primary-green);
   `}
@@ -35,7 +35,7 @@ export const Header = styled.div<typeProps>`
     transition: border-bottom 0.5s ease-in-out 0s;
     border-bottom: 1px solid var(--color-header-border-orange);
   `}
-  ${props => props.typePomo === 'shot_break' && css`
+  ${props => props.typePomo === 'short_break' && css`
     transition: border-bottom 0.5s ease-in-out 0s;
     border-bottom: 1px solid var(--color-header-border-green);
   `}
@@ -84,7 +84,7 @@ export const Header = styled.div<typeProps>`
       transition: background-color 0.5s ease-in-out 0s;
       background-color: var(--color-secondary-orange);
     `}
-    ${props => props.typePomo === 'shot_break' && css`
+    ${props => props.typePomo === 'short_break' && css`
       transition: background-color 0.5s ease-in-out 0s;
       background-color: var(--color-secondary-green);
     `}
@@ -107,7 +107,7 @@ export const Header = styled.div<typeProps>`
       transition: border 0.5s ease-in-out 0s;
       border: 2px solid var(--color-secondary-orange);    
     `}
-    ${props => props.typePomo === 'shot_break' && css`
+    ${props => props.typePomo === 'short_break' && css`
       transition: border 0.5s ease-in-out 0s;
       border: 2px solid var(--color-secondary-green);    
     `}
@@ -129,7 +129,7 @@ export const Time = styled.div<typeProps>`
     border: 1px solid var(--color-secondary-orange);
     background-color: var(--color-secondary-orange);  
   `}
-  ${props => props.typePomo === 'shot_break' && css`
+  ${props => props.typePomo === 'short_break' && css`
     transition: border background-color 0.5s ease-in-out 0s;
     border: 1px solid var(--color-secondary-green);
     background-color: var(--color-secondary-green);  
@@ -350,27 +350,5 @@ export const Content = styled.div`
         color: #e96d73;
       }
     }
-  }
-`;
-
-type ButtonOptionalProps = {
-  enableButton: boolean,
-}
-
-export const ButtonOptional = styled.button<ButtonOptionalProps>`
-  background: transparent;
-  color: #eee;
-  font-weight: bold;
-  border: 0;
-  font-size: 16px;
-  padding: 5px 12px;
-  border-radius: 6px;
-  
-  ${props => props.enableButton && css`
-    background: rgba(0, 0, 0, 0.15);
-  `};
-  
-  & + button {
-    margin-left: 20px;
   }
 `;
