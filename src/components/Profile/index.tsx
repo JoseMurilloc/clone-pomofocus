@@ -3,7 +3,7 @@ import React from 'react';
 import { Container } from './styles';
 import { IoMdClose } from 'react-icons/io';
 
-const Profile = ({enableVisible}) => {
+const Profile = () => {
   return (
     <Container>
       <header>
