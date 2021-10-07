@@ -6,7 +6,7 @@ import {FaUser} from 'react-icons/fa';
 import {GoRocket} from 'react-icons/go'
 import {RiDeleteBin6Line} from 'react-icons/ri'
 
-const MenuProfile = () => {
+function MenuProfile ()  {
   return (
     <Container>
       <ul>

@@ -1,19 +1,28 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
+  width: 100vw;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
+  position: absolute;
+`
 
-  opacity: 0;
-
+export const Modal = styled.div`
   width: 500px;
   background-color: #FFF;
   border-radius: 8px;
   z-index: 2147483647;
   box-shadow: rgb(0 0 0 / 15%) 0px 10px 20px, rgb(0 0 0 / 10%) 0px 3px 6px;
 
-  position: fixed;
+  position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+
+  button.close {
+    background: transparent;
+    border: none;
+  }
 
   header {
     padding: 20px 20px 0; 

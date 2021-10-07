@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { GrMoreVertical } from 'react-icons/gr';
 import { MdSettings  } from 'react-icons/md'
 
@@ -7,7 +7,6 @@ import { AiFillTwitterCircle } from 'react-icons/ai';
 import { FaPlusCircle } from 'react-icons/fa';
 import { FaCheckCircle, FaFacebook, FaProductHunt } from 'react-icons/fa'
 
-// import Profile from '../../components/Profile';
 import MenuProfile from '../../components/MenuProfile';
 import { ButtonOptional } from '../../components/ButtonOptional'
 
@@ -24,14 +23,16 @@ import {
 } from './styles';
 
 import CountDownButton from '../../components/CountDownButton';
+import Profile from '../../components/Profile';
 
 function Main() {
-  const [typePomo, setTypePomo] = 
-    React.useState<'pomodoro' | 'short_break' | 'long_break'>('pomodoro')
-  const [time, setTime] = React.useState(25*60);
-  const [active, setActive] = React.useState(false);
-  const [activeButton, setActiveButton] = React.useState(false);
-  const [visibleMenuProfile, setVisibleMenuProfile] = React.useState(false);
+  const [typePomo, setTypePomo] = useState<'pomodoro' | 'short_break' | 'long_break'>('pomodoro')
+  const [time, setTime] = useState(25*60);
+
+  const [visibleModalProfile, setVisibleModalProfile] = useState(true);
+  const [active, setActive] = useState(false);
+  const [activeButton, setActiveButton] = useState(false);
+  const [visibleMenuProfile, setVisibleMenuProfile] = useState(false);
 
   const {minutes, seconds} = React.useMemo(() => {
     const minutes = Math.floor(time / 60);
@@ -53,12 +54,6 @@ function Main() {
     setActiveButton(state => !state)
   }, [])
 
-
-
-  const handleOnClickButtonOptions = useCallback(() => {
-
-  }, [])
-
   useEffect(() => {
     switch (typePomo) {
       case 'pomodoro':
@@ -76,7 +71,7 @@ function Main() {
     }
   }, [typePomo])
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (active && time > 0) { 
       setTimeout(() => {
         setTime(time - 1)
@@ -87,8 +82,12 @@ function Main() {
 
   return (
     <Container typePomo={typePomo}>
-      {/* <Profile enableVisible={true} /> */}
-      {visibleMenuProfile && <MenuProfile />}
+      { visibleModalProfile && (
+        <Profile 
+          visible={visibleModalProfile} 
+          setVisible={setVisibleModalProfile}
+        />) }
+      { visibleMenuProfile && <MenuProfile /> }
 
       <Header typePomo={typePomo}>
         <div>
