@@ -30,6 +30,7 @@ export const Header = styled.div<typeProps>`
   width: 45%;
   height: 60px;
   margin: 0 auto;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
 
   ${props => props.typePomo === 'pomodoro' && css`
     transition: border-bottom 0.5s ease-in-out 0s;
@@ -68,6 +69,11 @@ export const Header = styled.div<typeProps>`
     display: flex;
     align-items: center;
   }
+
+  div button + button {
+    margin-left: 10px;
+  }
+  
   div button {
     border: 0;
     border-radius: 5px;
@@ -76,9 +82,6 @@ export const Header = styled.div<typeProps>`
     display: flex;
     align-items: center;
     color: #eee;
-
-    margin-right: 10px;
-    /* background-color: var(--color-secondary-orange); */
 
     ${props => props.typePomo === 'pomodoro' && css`
       transition: background-color 0.5s ease-in-out 0s;
@@ -123,6 +126,7 @@ export const Header = styled.div<typeProps>`
 
 export const Time = styled.div<typeProps>`
   margin-top: 50px;
+  border: none !important;
 
   ${props => props.typePomo === 'pomodoro' && css`
     transition: border background-color 0.5s ease-in-out 0s;
@@ -171,7 +175,6 @@ export const Time = styled.div<typeProps>`
   }
 
 `;
-
 
 export const LabelTimes = styled.div`
   margin-top: 30px;

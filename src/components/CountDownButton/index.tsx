@@ -10,7 +10,10 @@ interface CountDownButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 
 function CountDownButton({ 
-  startCountdown, typePomo, activeButton, ...rest 
+  startCountdown, 
+  typePomo, 
+  activeButton, 
+  ...rest 
 }: CountDownButtonProps) {
 
   return (

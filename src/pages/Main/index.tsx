@@ -29,7 +29,7 @@ function Main() {
   const [typePomo, setTypePomo] = useState<'pomodoro' | 'short_break' | 'long_break'>('pomodoro')
   const [time, setTime] = useState(25*60);
 
-  const [visibleModalProfile, setVisibleModalProfile] = useState(true);
+  const [visibleModalProfile, setVisibleModalProfile] = useState(false);
   const [active, setActive] = useState(false);
   const [activeButton, setActiveButton] = useState(false);
   const [visibleMenuProfile, setVisibleMenuProfile] = useState(false);
@@ -119,9 +119,6 @@ function Main() {
           </div>
 
         </div>
-        
-
-        
       </Header>
       <SubContainer>
         <Time typePomo={typePomo}>
