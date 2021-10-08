@@ -15,12 +15,21 @@ export const Container = styled.div`
     text-decoration: none;
     list-style: none;
     li {
+      display: flex;
+      align-items: center;
+
+      button {
+        background: transparent;
+        border: none;
+      }
+
       font-size: 14px;
       padding: 10px 16px;
       color: rgb(79, 43, 45);
       font-weight: 500;
       transition: background-color 0.5s ease-in-out 0s;
       cursor: pointer;
+
       &:hover {
         background-color: rgba(9,9,9,0.1);
       }
