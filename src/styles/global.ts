@@ -1,7 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
 export default createGlobalStyle`
-  
   * {
     margin: 0;
     padding: 0;
@@ -23,8 +22,8 @@ export default createGlobalStyle`
   }
 
   #root {
-    --color-primary-orange: #f05b56;
-    --color-secondary-orange: #f27874;
+    --color-primary-orange: #DB524D;
+    --color-secondary-orange: rgba(255, 255, 255, 0.1);
     --color-header-border-orange: #d8524d;
 
     --color-primary-green: #468e92;
