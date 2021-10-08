@@ -29,7 +29,12 @@ function Profile({ visible, setVisible }: ProfileProps) {
 
         </main>
         <footer>
-          <button className="buttonCancel">Cancel</button>
+          <button 
+            className="buttonCancel"
+            onClick={() => setVisible(state => !state)}
+          >
+            Cancel
+          </button>
           <button className="buttonSave">Save</button>
         </footer>
       </Modal>
