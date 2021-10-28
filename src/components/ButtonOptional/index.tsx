@@ -1,4 +1,4 @@
-import React, { ButtonHTMLAttributes } from 'react'
+import React, { ButtonHTMLAttributes, Dispatch } from 'react'
 import {Container} from './styles'
 
 interface ButtonOptionalProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -6,7 +6,7 @@ interface ButtonOptionalProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   label: string
   status: 'pomodoro' | 'short_break' | 'long_break'
   typePomo: 'pomodoro' | 'short_break' | 'long_break',
-  setTypePomo: any;
+  setTypePomo: Dispatch<React.SetStateAction<'pomodoro' | 'short_break' | 'long_break'>>;
 }
 
 export function ButtonOptional({

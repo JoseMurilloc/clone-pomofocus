@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { GrMoreVertical } from 'react-icons/gr';
 import { MdSettings  } from 'react-icons/md'
 
@@ -22,63 +22,37 @@ import {
   Footer,
 } from './styles';
 
-import CountDownButton from '../../components/CountDownButton';
 import Profile from '../../components/Profile';
+import { Countdown } from '../../components/Countdown';
+
+
+type Option = {
+  status: 'pomodoro' | 'short_break' | 'long_break';
+  label: string;
+}
 
 function Main() {
-  const [typePomo, setTypePomo] = useState<'pomodoro' | 'short_break' | 'long_break'>('pomodoro')
-  const [time, setTime] = useState(25*60);
+  const [typePomo, setTypePomo] = 
+    useState<'pomodoro' | 'short_break' | 'long_break'>('pomodoro')
 
   const [visibleModalProfile, setVisibleModalProfile] = useState(false);
-  const [active, setActive] = useState(false);
   const [activeButton, setActiveButton] = useState(false);
   const [visibleMenuProfile, setVisibleMenuProfile] = useState(false);
+  const [active, setActive] = useState(false);
 
-  const {minutes, seconds} = React.useMemo(() => {
-    const minutes = Math.floor(time / 60);
-    const seconds = time % 60;
+  
 
-    return { minutes, seconds}
-  }, [time])
+  const options: Option[] = [
+    {status: 'pomodoro', label: 'Pomodoro'},
+    {status: 'short_break', label: 'Short break'},
+    {status: 'long_break', label: 'Long Break'},
+  ]
 
-  const [minutesLeft, minutesRight] = React.useMemo(() => {
-    return String(minutes).padStart(2, '0').split('');
-  }, [minutes])
-
-  const [secondLeft, secondRight] = React.useMemo(() => {
-    return String(seconds).padStart(2, '0').split('');
-  }, [seconds])
 
   const startCountdown = React.useCallback(() => {
     setActive(state => !state)
     setActiveButton(state => !state)
   }, [])
-
-  useEffect(() => {
-    switch (typePomo) {
-      case 'pomodoro':
-        setTime(25*60);
-        return;
-      case 'short_break':
-        setTime(5*60);
-        return;
-      case 'long_break':
-        setTime(15*60);
-        return;
-      default:
-        setTime(25*60);
-        return;
-    }
-  }, [typePomo])
-
-  useEffect(() => {
-    if (active && time > 0) { 
-      setTimeout(() => {
-        setTime(time - 1)
-      }, 1000)
-    }
-  }, [active, time])
-
 
   return (
     <Container typePomo={typePomo}>
@@ -123,43 +97,22 @@ function Main() {
       <SubContainer>
         <Time typePomo={typePomo}>
           <div>
-            <ButtonOptional 
-              activeButton={activeButton}
-              status="pomodoro"
-              label="Pomodoro"
-              typePomo={typePomo}
-              setTypePomo={setTypePomo}
-            />
-            <ButtonOptional
-              activeButton={activeButton}
-              status="short_break"
-              label="Short break"
-              typePomo={typePomo}
-              setTypePomo={setTypePomo}
-            />
-            <ButtonOptional
-              activeButton={activeButton}
-              status="long_break"
-              label="Long break"
-              typePomo={typePomo}
-              setTypePomo={setTypePomo}
-            />
+            {options.map(option => (
+              <ButtonOptional 
+                activeButton={activeButton}
+                status={option.status}
+                label={option.label}
+                typePomo={typePomo}
+                setTypePomo={setTypePomo}
+              />
+            ))}
           </div>
-          <div className="countDown">
-            <div>
-              <span>{minutesLeft}</span>
-              <span>{minutesRight}</span>
-            </div>
-            <span>:</span>
-          <div>
-            <span>{secondLeft}</span>
-            <span>{secondRight}</span>
-          </div>
-          </div>
-          <CountDownButton 
+          <Countdown 
+            active={active}
+            setActiveButton={setActiveButton}
+            startCountdown={startCountdown}
             typePomo={typePomo}
             activeButton={activeButton}
-            onClick={startCountdown} 
           />
         </Time>
         <LabelTimes>

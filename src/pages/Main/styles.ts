@@ -162,17 +162,6 @@ export const Time = styled.div<typeProps>`
     font-size: 120px;
   }
 
-  .countDown {
-    padding-bottom: 12px;
-    width: 100%;
-    
-    span {
-      font-size: 120px;
-      font-weight: bold;
-      margin-top: 20px;
-    }
-
-  }
 
 `;
 
