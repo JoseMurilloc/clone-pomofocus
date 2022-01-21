@@ -1,11 +1,5 @@
 import React, { useState } from 'react';
-import { GrMoreVertical } from 'react-icons/gr';
-import { MdSettings  } from 'react-icons/md'
-
-import { GoGraph } from 'react-icons/go';
-import { AiFillTwitterCircle } from 'react-icons/ai';
-import { FaPlusCircle } from 'react-icons/fa';
-import { FaCheckCircle, FaFacebook, FaProductHunt } from 'react-icons/fa'
+import {IconMain} from '../../commons/icons/Main';
 
 import MenuProfile from '../../components/MenuProfile';
 import { ButtonOptional } from '../../components/ButtonOptional'
@@ -26,14 +20,11 @@ import Profile from '../../components/Profile';
 import { Countdown } from '../../components/Countdown';
 
 
-type Option = {
-  status: 'pomodoro' | 'short_break' | 'long_break';
-  label: string;
-}
+import {Option, Status} from './types'
 
 function Main() {
-  const [typePomo, setTypePomo] = 
-    useState<'pomodoro' | 'short_break' | 'long_break'>('pomodoro')
+  const [typePomodoro, setTypePomodoro] = 
+    useState<Status>('pomodoro')
 
   const [visibleModalProfile, setVisibleModalProfile] = useState(false);
   const [activeButton, setActiveButton] = useState(false);
@@ -55,7 +46,7 @@ function Main() {
   }, [])
 
   return (
-    <Container typePomo={typePomo}>
+    <Container typePomodoro={typePomodoro}>
       { visibleModalProfile && (
         <Profile 
           visible={visibleModalProfile} 
@@ -63,20 +54,20 @@ function Main() {
         />) }
       { visibleMenuProfile && <MenuProfile /> }
 
-      <Header typePomo={typePomo}>
+      <Header typePomodoro={typePomodoro}>
         <div>
           <h1>
-            <FaCheckCircle size={20} color="#fff" />
+            <IconMain.FaCheckCircle size={20} color="#fff" />
             Pomodoro
           </h1>
 
           <div>
             <button>
-              <GoGraph size={20} color="#fff" />
+              <IconMain.GoGraph size={20} color="#fff" />
               Report
             </button>
             <button>
-              <MdSettings size={20} color="#fff" />
+              <IconMain.MdSettings size={20} color="#fff" />
               Setting
             </button>
 
@@ -95,15 +86,15 @@ function Main() {
         </div>
       </Header>
       <SubContainer>
-        <Time typePomo={typePomo}>
+        <Time typePomodoro={typePomodoro}>
           <div>
             {options.map(option => (
               <ButtonOptional 
                 activeButton={activeButton}
                 status={option.status}
                 label={option.label}
-                typePomo={typePomo}
-                setTypePomo={setTypePomo}
+                typePomo={typePomodoro}
+                setTypePomo={setTypePomodoro}
               />
             ))}
           </div>
@@ -111,7 +102,7 @@ function Main() {
             active={active}
             setActiveButton={setActiveButton}
             startCountdown={startCountdown}
-            typePomo={typePomo}
+            typePomo={typePomodoro}
             activeButton={activeButton}
           />
         </Time>
@@ -121,11 +112,11 @@ function Main() {
         <TaskOptions>
           <span>Tasks</span>
           <button>
-            <GrMoreVertical color="#fff" size={25} />
+            <IconMain.GrMoreVertical color="#fff" size={25} />
           </button>
         </TaskOptions>
         <AddTask>
-          <FaPlusCircle size={20} color="#fff" />
+          <IconMain.FaPlusCircle size={20} color="#fff" />
           <span>Add Task</span>
         </AddTask>
       </SubContainer>
@@ -189,13 +180,13 @@ function Main() {
         </div>
         <div>
           <a href="/">
-            <FaFacebook size={45} color="#999999" />
+            <IconMain.FaFacebook size={45} color="#999999" />
           </a>
           <a href="/">
-            <AiFillTwitterCircle size={45} color="#999999" />
+            <IconMain.AiFillTwitterCircle size={45} color="#999999" />
           </a>
           <a href="/">
-            <FaProductHunt size={45} color="#999999" />
+            <IconMain.FaProductHunt size={45} color="#999999" />
           </a>
         </div>
         <div>

@@ -1,20 +1,18 @@
 import styled, {css} from 'styled-components';
+import {typeProps} from './types'
 
-type typeProps = {
-  typePomo: 'pomodoro' | 'short_break' | 'long_break'
-} 
 
 export const Container = styled.div<typeProps>`
   width: 100%;
-  ${props => props.typePomo === 'pomodoro' && css`
+  ${props => props.typePomodoro === 'pomodoro' && css`
     transition: background-color 0.5s ease-in-out 0s;
     background: var(--color-primary-orange);
   `}
-  ${props => props.typePomo === 'short_break' && css`
+  ${props => props.typePomodoro === 'short_break' && css`
     transition: background-color 0.5s ease-in-out 0s;
     background: var(--color-primary-green);
   `}
-  ${props => props.typePomo === 'long_break' && css`
+  ${props => props.typePomodoro === 'long_break' && css`
     transition: background-color 0.5s ease-in-out 0s;
     background: var(--color-primary-blue);
   `}
@@ -32,15 +30,15 @@ export const Header = styled.div<typeProps>`
   margin: 0 auto;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
 
-  ${props => props.typePomo === 'pomodoro' && css`
+  ${props => props.typePomodoro === 'pomodoro' && css`
     transition: border-bottom 0.5s ease-in-out 0s;
     border-bottom: 1px solid var(--color-header-border-orange);
   `}
-  ${props => props.typePomo === 'short_break' && css`
+  ${props => props.typePomodoro === 'short_break' && css`
     transition: border-bottom 0.5s ease-in-out 0s;
     border-bottom: 1px solid var(--color-header-border-green);
   `}
-  ${props => props.typePomo === 'long_break' && css`
+  ${props => props.typePomodoro === 'long_break' && css`
     transition: border-bottom 0.5s ease-in-out 0s;
     border-bottom: 1px solid var(--color-header-border-blue);
   `}
@@ -83,15 +81,15 @@ export const Header = styled.div<typeProps>`
     align-items: center;
     color: #eee;
 
-    ${props => props.typePomo === 'pomodoro' && css`
+    ${props => props.typePomodoro === 'pomodoro' && css`
       transition: background-color 0.5s ease-in-out 0s;
       background-color: var(--color-secondary-orange);
     `}
-    ${props => props.typePomo === 'short_break' && css`
+    ${props => props.typePomodoro === 'short_break' && css`
       transition: background-color 0.5s ease-in-out 0s;
       background-color: var(--color-secondary-green);
     `}
-    ${props => props.typePomo === 'long_break' && css`
+    ${props => props.typePomodoro === 'long_break' && css`
      transition: background-color 0.5s ease-in-out 0s;
       background-color: var(--color-secondary-blue);
     `}
@@ -106,15 +104,15 @@ export const Header = styled.div<typeProps>`
     width: 30px;
     border-radius: 4px;
 
-    ${props => props.typePomo === 'pomodoro' && css`
+    ${props => props.typePomodoro === 'pomodoro' && css`
       transition: border 0.5s ease-in-out 0s;
       border: 2px solid var(--color-secondary-orange);    
     `}
-    ${props => props.typePomo === 'short_break' && css`
+    ${props => props.typePomodoro === 'short_break' && css`
       transition: border 0.5s ease-in-out 0s;
       border: 2px solid var(--color-secondary-green);    
     `}
-    ${props => props.typePomo === 'long_break' && css`
+    ${props => props.typePomodoro === 'long_break' && css`
       transition: border 0.5s ease-in-out 0s;
       border: 2px solid var(--color-secondary-blue);    
     `}
@@ -128,17 +126,17 @@ export const Time = styled.div<typeProps>`
   margin-top: 50px;
   border: none !important;
 
-  ${props => props.typePomo === 'pomodoro' && css`
+  ${props => props.typePomodoro === 'pomodoro' && css`
     transition: border background-color 0.5s ease-in-out 0s;
     border: 1px solid var(--color-secondary-orange);
     background-color: var(--color-secondary-orange);  
   `}
-  ${props => props.typePomo === 'short_break' && css`
+  ${props => props.typePomodoro === 'short_break' && css`
     transition: border background-color 0.5s ease-in-out 0s;
     border: 1px solid var(--color-secondary-green);
     background-color: var(--color-secondary-green);  
   `}
-  ${props => props.typePomo === 'long_break' && css`
+  ${props => props.typePomodoro === 'long_break' && css`
     transition: border background-color 0.5s ease-in-out 0s;
     border: 1px solid var(--color-secondary-blue);
     background-color: var(--color-secondary-blue);  
