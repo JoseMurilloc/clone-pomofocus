@@ -14,6 +14,7 @@ import {
   Container,
   Content,
   Footer,
+  ContentOfButtonsHeader,
 } from './styles';
 
 import Profile from '../../components/Profile';
@@ -21,8 +22,9 @@ import { Countdown } from '../../components/Countdown';
 
 
 import {Option, Status} from './types'
+import { Link } from 'react-router-dom';
 
-function Main() {
+export function Main() {
   const [typePomodoro, setTypePomodoro] = 
     useState<Status>('pomodoro')
 
@@ -61,17 +63,17 @@ function Main() {
             Pomodoro
           </h1>
 
-          <div>
+          <ContentOfButtonsHeader typePomodoro={typePomodoro}>
             <button>
-              <IconMain.GoGraph size={20} color="#fff" />
+              <IconMain.GoGraph size={18} color="#fff" />
               Report
             </button>
             <button>
-              <IconMain.MdSettings size={20} color="#fff" />
+              <IconMain.MdSettings size={18} color="#fff" />
               Setting
             </button>
 
-            <button
+            { false ? (<button
               className="buttonNoneExistStyle"
               onClick={() => setVisibleMenuProfile(state => !state)}
             >
@@ -80,8 +82,15 @@ function Main() {
                 alt="profile"
               />
 
-            </button>
-          </div>
+            </button>) : (
+              <Link to="/login">
+                <button>
+                  <IconMain.FaUserCircle size={18} color="#fff" />
+                  Login
+                </button>
+              </Link>
+            ) }
+          </ContentOfButtonsHeader>
 
         </div>
       </Header>
@@ -199,5 +208,3 @@ function Main() {
     </Container>
   );
 }
-
-export default Main;

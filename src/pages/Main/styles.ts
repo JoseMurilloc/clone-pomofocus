@@ -67,58 +67,42 @@ export const Header = styled.div<typeProps>`
     display: flex;
     align-items: center;
   }
+`;
 
-  div button + button {
-    margin-left: 10px;
-  }
-  
-  div button {
+export const ContentOfButtonsHeader = styled.div<typeProps>`
+  button {
     border: 0;
     border-radius: 5px;
     padding: 5px 15px;
-  
+
     display: flex;
     align-items: center;
     color: #eee;
+    
+    transition: background-color 0.5s ease-in-out 0s;
+    background-color: var(--color-header-white-opacity);
 
-    ${props => props.typePomodoro === 'pomodoro' && css`
-      transition: background-color 0.5s ease-in-out 0s;
-      background-color: var(--color-secondary-orange);
-    `}
-    ${props => props.typePomodoro === 'short_break' && css`
-      transition: background-color 0.5s ease-in-out 0s;
-      background-color: var(--color-secondary-green);
-    `}
-    ${props => props.typePomodoro === 'long_break' && css`
-     transition: background-color 0.5s ease-in-out 0s;
-      background-color: var(--color-secondary-blue);
-    `}
+    .buttonNoneExistStyle {
+      background-color: transparent;
+    }
+
+    svg {
+      margin-right: 5px;
+    }
+
+    /* Only user login image of profile */
+    img {
+      width: 20px;
+      border-radius: 4px;
+
+      border: 2px solid var(--color-header-white-opacity);  
+    }
+    
+    &:nth-child(1)  {
+      margin: 0px 10px;
+    }
 
   }
-
-  .buttonNoneExistStyle {
-    background-color: transparent;
-  }
-
-  div button > img {
-    width: 30px;
-    border-radius: 4px;
-
-    ${props => props.typePomodoro === 'pomodoro' && css`
-      transition: border 0.5s ease-in-out 0s;
-      border: 2px solid var(--color-secondary-orange);    
-    `}
-    ${props => props.typePomodoro === 'short_break' && css`
-      transition: border 0.5s ease-in-out 0s;
-      border: 2px solid var(--color-secondary-green);    
-    `}
-    ${props => props.typePomodoro === 'long_break' && css`
-      transition: border 0.5s ease-in-out 0s;
-      border: 2px solid var(--color-secondary-blue);    
-    `}
-  }
-
-
 `;
 
 

@@ -8,6 +8,10 @@ export default createGlobalStyle`
     box-sizing: border-box;
   }
 
+  a {
+    text-decoration: none;
+  }
+
   body {
     background: #fff;
     height: 100vh;
@@ -33,5 +37,7 @@ export default createGlobalStyle`
     --color-primary-blue: #437ea8;
     --color-secondary-blue: #6595b9;
     --color-header-border-blue: #497696;
+
+    --color-header-white-opacity: rgba(255, 255, 255, 0.2);
   }
 `;
