@@ -32,8 +32,7 @@ export function Main() {
   const [activeButton, setActiveButton] = useState(false);
   const [visibleMenuProfile, setVisibleMenuProfile] = useState(false);
   const [active, setActive] = useState(false);
-
-  
+ 
 
   const options: Option[] = [
     {status: 'pomodoro', label: 'Pomodoro'},
