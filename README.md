@@ -5,7 +5,6 @@
 > Essa aplicação tem o intuito educacional onde estou usando como base de estudo na prática com a biblioteca React JS . [Novidades estarei postando aqui](https://www.linkedin.com/in/jose-murillodev/)
 
 ## 👀✨ Preview
-<img src="https://i.imgur.com/TH5WLlg.png">
 <img src="https://i.imgur.com/9vfJSAf.png">
 
 ## ⚙️ Prerrequisitos
