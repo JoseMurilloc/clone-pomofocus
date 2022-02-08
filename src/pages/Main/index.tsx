@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import {IconMain} from '../../commons/icons/Main';
 
+import stripeImage from '../../assets/stripe.png';
+import twitterImage from '../../assets/twitter.png';
+import facebookImage from '../../assets/facebook.png';
+
 import MenuProfile from '../../components/MenuProfile';
 import { ButtonOptional } from '../../components/ButtonOptional'
-
 import { 
   SubContainer,
   Header,
@@ -15,6 +18,7 @@ import {
   Content,
   Footer,
   ContentOfButtonsHeader,
+  ContainerLinkSocial,
 } from './styles';
 
 import Profile from '../../components/Profile';
@@ -26,8 +30,7 @@ import { Link } from 'react-router-dom';
 import { Status } from '../../commons/types/status';
 
 export function Main() {
-  const [typePomodoro, setTypePomodoro] = 
-    useState<Status>('pomodoro')
+  const [typePomodoro, setTypePomodoro] = useState<Status>('pomodoro')
 
   const [visibleModalProfile, setVisibleModalProfile] = useState(false);
   const [activeButton, setActiveButton] = useState(false);
@@ -183,25 +186,39 @@ export function Main() {
         
       </Content>
       <Footer>
-        <div>
-          <span>HOME</span>
-          <span>PRIVACY</span>
+        <div className="header-footer">
+          <a className="header-footer-link" href="/">Home</a>
+          <a className="header-footer-link" href="/">Privacy</a>
+          <a className="header-footer-link" href="/">Contact</a>
+          <a className="header-footer-link" href="/">Simples page</a>
         </div>
-        <div>
-          <a href="/">
-            <IconMain.FaFacebook size={45} color="#999999" />
+        <ContainerLinkSocial>
+          <a href="/" className="link-social">
+            <img 
+              className="link-social-icon" 
+              src={facebookImage} 
+              alt="sprite-icon" 
+            />
           </a>
-          <a href="/">
-            <IconMain.AiFillTwitterCircle size={45} color="#999999" />
+          <a href="/" className="link-social">
+            <img 
+              className="link-social-icon" 
+              src={twitterImage} 
+              alt="sprite-icon" 
+            />
           </a>
-          <a href="/">
-            <IconMain.FaProductHunt size={45} color="#999999" />
+          <a href="/" className="link-social">
+            <img 
+              className="link-social-icon" 
+              src={stripeImage} 
+              alt="sprite-icon" 
+            />
           </a>
+        </ContainerLinkSocial>
+        <div className="made-header-message">
+          <span>{`Made with <3 by`} <strong>Yuya Uzu</strong></span>
         </div>
-        <div>
-          Made with s2 by <strong>Yuya Uzu</strong>
-        </div>
-        <div>
+        <div className="copyright">
           <small>©Pomofocus 2019. All Rights Reserved.</small>
         </div>
       </Footer>

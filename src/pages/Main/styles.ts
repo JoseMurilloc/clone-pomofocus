@@ -174,7 +174,6 @@ export const TaskOptions = styled.div`
   button {
     background: rgba(255, 255, 255, 0.2);
     border: none;
-    /* padding: 8px; */
     border-radius: 6px;
   }
 
@@ -202,10 +201,10 @@ export const AddTask = styled.div`
   }
 `;
 
-
 export const Footer = styled.div`
   border: 2px solid #efefef;
   padding-top: 40px;
+  padding-bottom: 20px; 
   background: #fff;
 
   display: flex;
@@ -213,31 +212,65 @@ export const Footer = styled.div`
   align-items: center;
   justify-content: center;
 
-  div {
-    max-width: 620px;
-    margin-bottom: 17px;
-
-    color: #7f6769;
-    
-    a svg {
-      margin: 6px 4px;
-    }
-
-    span {
+  .header-footer {
+    margin-bottom: 14px;
+  
+    .header-footer-link {
+      color: hsl(357, 12%, 42%);
+      font-size: 16px;
+      margin: 0px 4px;
       font-weight: bold;
+      cursor: pointer;
+      text-transform: uppercase;
+    }
+  }
 
-      & + span {
-        margin-left: 10px;
+  .made-header-message {
+    margin-bottom: 20px;
+    span {
+      color: hsl(357, 12%, 42%);
+      font-size: 16px;
+
+      strong {
+        color: rgb(217 85 80);
+        font-weight: bold;
+        opacity: 0.8;
+        cursor: pointer;
       }
     }
+  }
 
-    strong {
-      color: #ed8a8e;
-    }
+  .copyright {
+    padding: 0;
 
     small {
-      color: #b6aaaa;
+      font-size: 12px;
+      color: hsl(357, 8%, 60%);
     }
+  }
+`;
+
+export const ContainerLinkSocial = styled.div`
+  display: flex;
+  max-width: 620px;
+  margin-bottom: 17px;
+  
+  .link-social {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: 6px 4px;
+    background-color: #999;
+    width: 45px;
+    height: 45px;
+
+    border-radius: 50%;
+  }
+
+  .link-social-icon {
+    width: 30px;
   }
 `;
 
