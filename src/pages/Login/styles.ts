@@ -2,13 +2,13 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   width: 100vw;
-  height: 100vh;
   background-color: var(--color-primary-orange);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  padding: 30px 0 0 0;
+  padding: 30px 0;
+  overflow-x: hidden;
 `;
 
 export const Main = styled.div`
@@ -128,6 +128,7 @@ export const Footer = styled.div`
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
+  margin-top: 24px;
 
   span {
     margin-bottom: 8px;
