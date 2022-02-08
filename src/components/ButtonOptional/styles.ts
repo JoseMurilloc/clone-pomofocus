@@ -1,8 +1,9 @@
 import styled, { css } from "styled-components";
+import { Status } from "../../commons/types/status";
 
 type ButtonOptionalProps = {
   enableButton: boolean
-  types: 'pomodoro' | 'short_break' | 'long_break'
+  types: Status
 }
 
 export const Container = styled.button<ButtonOptionalProps>`

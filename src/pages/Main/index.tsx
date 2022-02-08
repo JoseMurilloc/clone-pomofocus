@@ -21,8 +21,9 @@ import Profile from '../../components/Profile';
 import { Countdown } from '../../components/Countdown';
 
 
-import {Option, Status} from './types'
+import {Option} from './types'
 import { Link } from 'react-router-dom';
+import { Status } from '../../commons/types/status';
 
 export function Main() {
   const [typePomodoro, setTypePomodoro] = 

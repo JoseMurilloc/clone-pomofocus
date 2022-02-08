@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components";
+import { Status } from "../../commons/types/status";
 
 export const Container = styled.div`
 `;
@@ -18,7 +19,7 @@ export const ContentTime = styled.div`
 
 type ButtonCountDownProps = {
   activeButton: boolean,
-  typePomo: 'pomodoro' | 'short_break' | 'long_break' 
+  typePomo: Status 
 }
 
 export const ButtonCountDown = styled.button<ButtonCountDownProps>`

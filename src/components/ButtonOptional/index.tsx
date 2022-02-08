@@ -1,12 +1,13 @@
 import React, { ButtonHTMLAttributes, Dispatch } from 'react'
+import { Status } from '../../commons/types/status'
 import {Container} from './styles'
 
 interface ButtonOptionalProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   activeButton: boolean
   label: string
-  status: 'pomodoro' | 'short_break' | 'long_break'
-  typePomo: 'pomodoro' | 'short_break' | 'long_break',
-  setTypePomo: Dispatch<React.SetStateAction<'pomodoro' | 'short_break' | 'long_break'>>;
+  status: Status
+  typePomo: Status,
+  setTypePomo: Dispatch<React.SetStateAction<Status>>;
 }
 
 export function ButtonOptional({

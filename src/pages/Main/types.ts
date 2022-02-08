@@ -1,4 +1,4 @@
-export type Status = 'pomodoro' | 'short_break' | 'long_break';
+import { Status } from "../../commons/types/status"
 
 export type typeProps = {
   typePomodoro: Status;

@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react'
+import { Status } from '../../commons/types/status';
 import { ContentTime, ButtonCountDown } from "./styles";
 
 interface CountdownProps {
-  typePomo: 'pomodoro' | 'short_break' | 'long_break'
+  typePomo: Status
   setActiveButton: React.Dispatch<React.SetStateAction<boolean>>
   startCountdown: () => void;
   active: boolean,
