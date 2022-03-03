@@ -12,6 +12,10 @@ export const Container = styled.button`
   border: none;
   box-shadow: rgb(0 0 0 / 20%) 0px 2px 2px;
 
+  &:hover {
+    background-color: rgba(11,11,11);
+  }
+
   span { 
     color: rgb(255, 255, 255);
     font-size: 14px;

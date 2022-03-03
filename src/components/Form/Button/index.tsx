@@ -1,10 +1,14 @@
 import React from 'react';
 import { Container } from './styles';
 
-export function Button() {
+interface Props {
+  title: string
+}
+
+export function Button({title}: Props) {
   return(
     <Container>
-      <span>Log in with Email</span>
+      <span>{title}</span>
     </Container>
   )
 }
