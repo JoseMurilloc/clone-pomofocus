@@ -12,7 +12,7 @@ import {
   Main,
 } from "./styles";
 
-export function Login() {
+export function ForgotPassword() {
   return (
     <Container>
       <Main>
@@ -21,15 +21,10 @@ export function Login() {
             <IconMain.FaCheckCircle size={55} color="#fff" />
             Pomofocus
           </h1>
-          <h2>Login</h2>
+          <h2>Reset password</h2>
         </Header>
         <Form>
-          <ButtonLoginGithub />
-
-          <div className="containerOr">
-            <span>Or</span>
-          </div>
-          
+         
           <div className="containerLabelInput">
             <span>Email</span>
           </div>
@@ -40,28 +35,14 @@ export function Login() {
             />
           </div>
 
-          <div className="containerLabelInput">
-            <span>Password</span>
-          </div>
-          <div className="containerInput">
-            <Input 
-              placeholder="Password here"
-              type="password"
-            />
-          </div>
-
           <div className="containerButtonWithEmail">
-            <Button title="Log in with Email"/>
-          </div>
-
-          <div className="containerForgotPassword">
-            <Link to="/forgot"><span>Forgot Password</span></Link>
+            <Button title="Reset password"/>
           </div>
         </Form>
       </Main>
       <Footer>
-        <span>Do not have an account?</span>
-        <Link to="/signup">Create account</Link>
+        <span>Try other methods?</span>
+        <Link to="/login">Login</Link>
       </Footer>
     </Container>
   )
