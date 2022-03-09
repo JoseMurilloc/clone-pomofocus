@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { IconMain } from '../../commons/icons/Main';
 import { Button } from '../../components/Form/Button';
+import { ButtonLoginGithub } from '../../components/Form/ButtonLoginGithub';
 import { Input } from '../../components/Form/Input';
 import { 
   Container,
@@ -11,7 +12,7 @@ import {
   Main,
 } from "./styles";
 
-export function ForgotPassword() {
+export function RegisterMe() {
   return (
     <Container>
       <Main>
@@ -20,10 +21,15 @@ export function ForgotPassword() {
             <IconMain.FaCheckCircle size={55} color="#fff" />
             Pomofocus
           </h1>
-          <h2>Reset password</h2>
+          <h2>Create Account</h2>
         </Header>
         <Form>
-         
+          <ButtonLoginGithub />
+
+          <div className="containerOr">
+            <span>Or</span>
+          </div>
+          
           <div className="containerLabelInput">
             <span>Email</span>
           </div>
@@ -35,13 +41,13 @@ export function ForgotPassword() {
           </div>
 
           <div className="containerButtonWithEmail">
-            <Button title="Reset password"/>
+            <Button title="Log in with Email"/>
           </div>
         </Form>
       </Main>
       <Footer>
-        <span>Try other methods?</span>
-        <Link to="/login">Login</Link>
+        <span>Already have an account?</span>
+        <Link to="/signup">Log in</Link>
       </Footer>
     </Container>
   )

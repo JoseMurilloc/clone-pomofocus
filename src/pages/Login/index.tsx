@@ -61,7 +61,7 @@ export function Login() {
       </Main>
       <Footer>
         <span>Do not have an account?</span>
-        <Link to="/signup">Create account</Link>
+        <Link to="/register-me">Create account</Link>
       </Footer>
     </Container>
   )
