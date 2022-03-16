@@ -1,13 +1,13 @@
-import React from 'react';
+import React, { ButtonHTMLAttributes } from 'react';
 import { Container } from './styles';
 
-interface Props {
+interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   title: string
 }
 
-export function Button({title}: Props) {
+export function Button({title, ...rest}: Props) {
   return(
-    <Container>
+    <Container {...rest}>
       <span>{title}</span>
     </Container>
   )
