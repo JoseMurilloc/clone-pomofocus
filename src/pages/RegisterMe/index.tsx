@@ -47,7 +47,7 @@ export function RegisterMe() {
       </Main>
       <Footer>
         <span>Already have an account?</span>
-        <Link to="/signup">Log in</Link>
+        <Link to="/login">Log in</Link>
       </Footer>
     </Container>
   )
