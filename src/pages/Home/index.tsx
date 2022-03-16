@@ -7,13 +7,12 @@ import facebookImage from '../../assets/facebook.png';
 
 import MenuProfile from '../../components/MenuProfile';
 import { ButtonOptional } from '../../components/ButtonOptional'
-import { 
-  SubContainer,
+import {
+  Main,
   Header,
-  Time, 
+  Time,
   LabelTimes,
   TaskOptions,
-  AddTask,
   Container,
   Content,
   Footer,
@@ -27,17 +26,21 @@ import { Countdown } from '../../components/Countdown';
 import {Option} from './types'
 import { Link } from 'react-router-dom';
 import { Status } from '../../commons/types/status';
+import { AddTask } from '../../components/AddTask';
 
-export function Main () {
+export function Home () {
 
 
   const [typePomodoro, setTypePomodoro] = useState<Status>('pomodoro')
 
-  const [visibleModalProfile, setVisibleModalProfile] = useState(false);
+  const [visibleModalProfile, setVisibleModalProfile] =
+    useState(false);
+  const [addTask, setAddTask] = useState(false)
+
   const [activeButton, setActiveButton] = useState(false);
   const [visibleMenuProfile, setVisibleMenuProfile] = useState(false);
   const [active, setActive] = useState(false);
- 
+
 
   const options: Option[] = [
     {status: 'pomodoro', label: 'Pomodoro'},
@@ -54,8 +57,8 @@ export function Main () {
   return (
     <Container typePomodoro={typePomodoro}>
       { visibleModalProfile && (
-        <Profile 
-          visible={visibleModalProfile} 
+        <Profile
+          visible={visibleModalProfile}
           setVisible={setVisibleModalProfile}
         />) }
       { visibleMenuProfile && <MenuProfile /> }
@@ -68,27 +71,25 @@ export function Main () {
           </h1>
 
           <ContentOfButtonsHeader typePomodoro={typePomodoro}>
-            <button>
+            <button className="button-default">
               <IconMain.GoGraph size={18} color="#fff" />
               Report
             </button>
-            <button>
+            <button className="button-default">
               <IconMain.MdSettings size={18} color="#fff" />
               Setting
             </button>
 
-            { false ? (<button
-              className="buttonNoneExistStyle"
-              onClick={() => setVisibleMenuProfile(state => !state)}
-            >
-              <img 
-                src="https://lh3.googleusercontent.com/a-/AOh14Ggsx2eT_A6emvGukBj5QrwRCqyJNSxD-5j5FvFLpw=s96-c" 
-                alt="profile"
-              />
-
-            </button>) : (
+            { false ? (
+              <div className="login-user">
+                <img
+                  src="https://lh3.googleusercontent.com/a-/AOh14Ggsx2eT_A6emvGukBj5QrwRCqyJNSxD-5j5FvFLpw=s96-c"
+                  alt="profile"
+                />
+              </div>
+            ) : (
               <Link to="/login">
-                <button>
+                <button className="button-default">
                   <IconMain.FaUserCircle size={18} color="#fff" />
                   Login
                 </button>
@@ -98,11 +99,12 @@ export function Main () {
 
         </div>
       </Header>
-      <SubContainer>
+      <Main>
         <Time typePomodoro={typePomodoro}>
           <div>
             {options.map(option => (
-              <ButtonOptional 
+              <ButtonOptional
+                key={option.label}
                 activeButton={activeButton}
                 status={option.status}
                 label={option.label}
@@ -111,7 +113,7 @@ export function Main () {
               />
             ))}
           </div>
-          <Countdown 
+          <Countdown
             active={active}
             setActiveButton={setActiveButton}
             startCountdown={startCountdown}
@@ -125,16 +127,21 @@ export function Main () {
         <TaskOptions>
           <span>Tasks</span>
           <button>
-            <IconMain.GrMoreVertical color="#fff" size={25} />
+            <IconMain.GrMoreVertical color="#fff" size={16} />
           </button>
         </TaskOptions>
-        <AddTask>
-          <IconMain.FaPlusCircle size={20} color="#fff" />
-          <span>Add Task</span>
-        </AddTask>
-      </SubContainer>
+        {addTask ? (
+          <div data-testid="card-add-task">Modal Add Task</div>
+        ) : (
+          <AddTask
+            Icon={IconMain.FaPlusCircle}
+            label="Add Task"
+            onClick={() => setAddTask(state => !state)}
+          />
+        )}
+      </Main>
       <Content>
-      
+
         <h1>An online Pomodoro Timer to boost your productivity</h1>
 
         <div>
@@ -182,9 +189,9 @@ export function Main () {
             <li> <strong>Audio notification</strong> at the end of a timer period</li>
             <li> <strong>Customizable timer</strong> intervals to suit your preference</li>
           </ul>
-        </div> 
+        </div>
 
-        
+
       </Content>
       <Footer>
         <div className="header-footer">
@@ -195,24 +202,24 @@ export function Main () {
         </div>
         <ContainerLinkSocial>
           <a href="/" className="link-social">
-            <img 
-              className="link-social-icon" 
-              src={facebookImage} 
-              alt="sprite-icon" 
+            <img
+              className="link-social-icon"
+              src={facebookImage}
+              alt="sprite-icon"
             />
           </a>
           <a href="/" className="link-social">
-            <img 
-              className="link-social-icon" 
-              src={twitterImage} 
-              alt="sprite-icon" 
+            <img
+              className="link-social-icon"
+              src={twitterImage}
+              alt="sprite-icon"
             />
           </a>
           <a href="/" className="link-social">
-            <img 
-              className="link-social-icon" 
-              src={stripeImage} 
-              alt="sprite-icon" 
+            <img
+              className="link-social-icon"
+              src={stripeImage}
+              alt="sprite-icon"
             />
           </a>
         </ContainerLinkSocial>
