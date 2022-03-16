@@ -23,7 +23,10 @@ function Profile({ visible, setVisible }: ProfileProps) {
           </button>
         </header>
         <main>
-          <img src="https://lh3.googleusercontent.com/a-/AOh14Ggsx2eT_A6emvGukBj5QrwRCqyJNSxD-5j5FvFLpw=s96-c" alt="profile"/>
+          <img 
+            src="https://avatars.githubusercontent.com/u/43470555?v=4" 
+            alt="profile"
+          />
 
           <span>José Murillo</span>
 
