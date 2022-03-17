@@ -131,7 +131,7 @@ export function Home () {
           </button>
         </TaskOptions>
         {addTask ? (
-          <CardAddTask />
+          <CardAddTask onVisible={setAddTask}/>
         ) : (
           <AddTask
             Icon={IconMain.FaPlusCircle}
