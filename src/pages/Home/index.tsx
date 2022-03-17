@@ -27,6 +27,7 @@ import {Option} from './types'
 import { Link } from 'react-router-dom';
 import { Status } from '../../commons/types/status';
 import { AddTask } from '../../components/AddTask';
+import { CardAddTask } from '../../components/CardAddTask';
 
 export function Home () {
 
@@ -96,7 +97,6 @@ export function Home () {
               </Link>
             ) }
           </ContentOfButtonsHeader>
-
         </div>
       </Header>
       <Main>
@@ -131,7 +131,7 @@ export function Home () {
           </button>
         </TaskOptions>
         {addTask ? (
-          <div data-testid="card-add-task">Modal Add Task</div>
+          <CardAddTask />
         ) : (
           <AddTask
             Icon={IconMain.FaPlusCircle}
