@@ -1,31 +1,31 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { AddTask } from '.';
 import { IconMain } from '../../commons/icons/Main';
 import userEvent from '@testing-library/user-event';
 
 describe('<AddTask />', () => {
   it('Button renders name correctly', () => {
-    const {getByRole} = render(
+    render(
       <AddTask
         Icon={IconMain.FaPlusCircle}
         label="Add Task"
       />
     )
-    const buttonElement = getByRole('button', {
+    const buttonElement = screen.getByRole('button', {
       name: /Add Task/
     })
 
     expect(buttonElement).toBeInTheDocument();
   })
   it('should render with icon', () => {
-    const {getByTestId} = render(
+    render(
       <AddTask
         Icon={IconMain.FaPlusCircle}
         label="Add Task"
       />
     )
 
-    expect(getByTestId('icon')).toBeInTheDocument();
+    expect(screen.getByTestId('icon')).toBeInTheDocument();
   })
 })
