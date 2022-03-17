@@ -1,6 +1,5 @@
 import React, { ButtonHTMLAttributes } from 'react';
 import { IconType } from 'react-icons/lib';
-import { IconMain } from '../../commons/icons/Main';
 import { Container } from './styles';
 
 interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
