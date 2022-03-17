@@ -22,6 +22,7 @@ export const Main = styled.div`
   width: 480px;
   margin: 0 auto;
   min-height: 600px;
+  padding-bottom: 42px;
 `;
 
 export const Header = styled.div<typeProps>`
@@ -29,6 +30,7 @@ export const Header = styled.div<typeProps>`
   height: 60px;
   margin: 0 auto;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
+  min-width: 620px;
 
   ${props => props.typePomodoro === 'pomodoro' && css`
     transition: border-bottom 0.5s ease-in-out 0s;
@@ -49,6 +51,7 @@ export const Header = styled.div<typeProps>`
     justify-content: space-between;
     align-items: center;
     color: #eee;
+
   }
 
   h1 {
@@ -74,7 +77,10 @@ export const ContentOfButtonsHeader = styled.div<typeProps>`
   .button-default {
     border: 0;
     border-radius: 5px;
-    padding: 5px 15px;
+    height: 32px;
+    width: 87px;
+    padding: 8px 12px;
+    font-size: 13px;
 
     display: flex;
     align-items: center;
@@ -178,8 +184,8 @@ export const TaskOptions = styled.div`
   border-bottom: 2px solid rgba(255, 255, 255, 0.6);
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
-  padding-bottom: 25px;
+  align-items: center;
+  padding-bottom: 14px;
 
   span {
     color: #eee;
