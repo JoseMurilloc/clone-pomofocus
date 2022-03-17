@@ -18,7 +18,7 @@ export default createGlobalStyle`
   }
 
   html, body, button, input {
-    font-family: 'ArialRounded', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+    font-family: 'Varela Round', sans-serif;
   }
 
   button {
@@ -33,7 +33,7 @@ export default createGlobalStyle`
     --color-primary-green: #468e92;
     --color-secondary-green: #67a3a5;
     --color-header-border-green: #3c8184;
-    
+
     --color-primary-blue: #437ea8;
     --color-secondary-blue: #6595b9;
     --color-header-border-blue: #497696;
