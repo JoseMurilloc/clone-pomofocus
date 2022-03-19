@@ -1,15 +1,15 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  width: 200px;
+  width: 20rem;
   background-color: #fff;
-  padding: 4px 0px;
-  border-radius: 4px;
-  box-shadow: rgb(0 0 0 / 15%) 0px 10px 20px, rgb(0 0 0 / 10%) 0px 3px 6px;
+  padding: 0.4rem 0rem;
+  border-radius: 0.4rem;
+  box-shadow: rgb(0 0 0 / 15%) 0rem 1rem 2rem, rgb(0 0 0 / 10%) 0rem 0.3rem 0.6rem;
 
   position: absolute;
-  right: 360px;
-  top: 60px;
+  right: 36rem;
+  top: 6rem;
 
   ul {
     text-decoration: none;
@@ -23,8 +23,8 @@ export const Container = styled.div`
         border: none;
       }
 
-      font-size: 14px;
-      padding: 10px 16px;
+      font-size: 1.4rem;
+      padding: 1rem 1.6rem;
       color: rgb(79, 43, 45);
       font-weight: 500;
       transition: background-color 0.5s ease-in-out 0s;
@@ -33,10 +33,10 @@ export const Container = styled.div`
       &:hover {
         background-color: rgba(9,9,9,0.1);
       }
-      
+
       svg {
-        margin-right: 8px;
+        margin-right: 0.8rem;
       }
     }
-  }  
+  }
 `;

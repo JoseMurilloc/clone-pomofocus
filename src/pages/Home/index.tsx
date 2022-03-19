@@ -30,12 +30,9 @@ import { AddTask } from '../../components/AddTask';
 import { CardAddTask } from '../../components/CardAddTask';
 
 export function Home () {
-
-
   const [typePomodoro, setTypePomodoro] = useState<Status>('pomodoro')
 
-  const [visibleModalProfile, setVisibleModalProfile] =
-    useState(false);
+  const [visibleModalProfile, setVisibleModalProfile] = useState(false)
   const [addTask, setAddTask] = useState(false)
 
   const [activeButton, setActiveButton] = useState(false);
@@ -48,7 +45,6 @@ export function Home () {
     {status: 'short_break', label: 'Short break'},
     {status: 'long_break', label: 'Long Break'},
   ]
-
 
   const startCountdown = React.useCallback(() => {
     setActive(state => !state)
@@ -74,11 +70,11 @@ export function Home () {
           <ContentOfButtonsHeader typePomodoro={typePomodoro}>
             <button className="button-default">
               <IconMain.GoGraph size={18} color="#fff" />
-              Report
+              <span>Report</span>
             </button>
             <button className="button-default">
               <IconMain.MdSettings size={18} color="#fff" />
-              Setting
+              <span>Setting</span>
             </button>
 
             { false ? (
@@ -92,7 +88,7 @@ export function Home () {
               <Link to="/login">
                 <button className="button-default">
                   <IconMain.FaUserCircle size={18} color="#fff" />
-                  Login
+                  <span>Login</span>
                 </button>
               </Link>
             ) }

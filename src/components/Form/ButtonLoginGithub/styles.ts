@@ -6,25 +6,25 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
   text-align: center;
-  
+
   width: 100%;
-  border-radius: 4px;
+  border-radius: 0.4rem;
   cursor: pointer;
-  box-shadow: rgb(0 0 0 / 20%) 0px 2px 2px;
-  padding: 12px;
+  box-shadow: rgb(0 0 0 / 20%) 0rem 0.2rem 0.2rem;
+  padding: 1.2rem;
   background-color: white;
-  border: 1px solid rgb(238, 238, 238);
+  border: 0.1rem solid rgb(238, 238, 238);
 
 
-  svg { 
-    /* width: 20px; */
+  svg {
+    /* width: 2rem; */
   }
 
   span {
-    font-size: 14px;
+    font-size: 1.4rem;
     letter-spacing: 0.02em;
     color: rgb(119, 119, 119);
     font-weight: bold;
-    margin-left: 10px;
+    margin-left: 1rem;
   }
 `;

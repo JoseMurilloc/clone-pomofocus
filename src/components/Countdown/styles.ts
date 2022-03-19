@@ -5,55 +5,55 @@ export const Container = styled.div`
 `;
 
 export const ContentTime = styled.div`
-  padding-bottom: 12px;
+  padding-bottom: 1.2rem;
   width: 100%;
   display: flex;
   flex-direction: column;
-  
+
   span {
-    font-size: 120px;
+    font-size: 12rem;
     font-weight: bold;
-    margin-top: 20px;
+    margin-top: 2rem;
   }
 `;
 
 type ButtonCountDownProps = {
   activeButton: boolean,
-  typePomo: Status 
+  typePomo: Status
 }
 
 export const ButtonCountDown = styled.button<ButtonCountDownProps>`
   background: #fff;
 
-  ${props => props.typePomo === 'pomodoro' 
+  ${props => props.typePomo === 'pomodoro'
     && css`color: var(--color-primary-orange);`}
-  ${props => props.typePomo === 'short_break' 
+  ${props => props.typePomo === 'short_break'
     && css`color: var(--color-primary-green);`}
-  ${props => props.typePomo === 'long_break' 
+  ${props => props.typePomo === 'long_break'
     && css`color: var(--color-primary-blue);`}
 
   border: 0;
-  border-radius: 6px;
+  border-radius: 0.6rem;
 
-  font-size: 22px;
+  font-size: 2.2rem;
   font-weight: bold;
 
-  margin: 20px 0 0;
-  padding: 0 12px;
+  margin: 2rem 0 0;
+  padding: 0 1.2rem;
 
-  height: 55px;
-  width: 200px;
+  height: 5.5rem;
+  width: 20rem;
 
   &:active {
-    box-shadow: 0 0px #ebebeb;
-    transform: translateY(4px);
+    box-shadow: 0 0rem #ebebeb;
+    transform: translateY(0.4rem);
   }
 
   ${props => props.activeButton ? css`
-    box-shadow: 0 0px #ebebeb;
-    transform: translateY(4px);
+    box-shadow: 0 0rem #ebebeb;
+    transform: translateY(0.4rem);
   ` : css`
-    box-shadow: 0 9px #ebebeb;
+    box-shadow: 0 0.9rem #ebebeb;
   `}
 
 `;

@@ -19,30 +19,36 @@ export const Container = styled.div<typeProps>`
 `;
 
 export const Main = styled.div`
-  width: 480px;
+  width: 48rem;
   margin: 0 auto;
-  min-height: 600px;
-  padding-bottom: 42px;
+  padding-bottom: 4.2rem;
 `;
 
 export const Header = styled.div<typeProps>`
-  width: 45%;
-  height: 60px;
+  width: 62rem;
+
+  height: 6rem;
   margin: 0 auto;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
-  min-width: 620px;
+  border-bottom: 0.1rem solid rgba(0, 0, 0, 0.1) !important;
+
+
+  @media (max-width: 395px) {
+    width: 100%;
+    padding: 5px;
+  }
+
 
   ${props => props.typePomodoro === 'pomodoro' && css`
     transition: border-bottom 0.5s ease-in-out 0s;
-    border-bottom: 1px solid var(--color-header-border-orange);
+    border-bottom: 0.1rem solid var(--color-header-border-orange);
   `}
   ${props => props.typePomodoro === 'short_break' && css`
     transition: border-bottom 0.5s ease-in-out 0s;
-    border-bottom: 1px solid var(--color-header-border-green);
+    border-bottom: 0.1rem solid var(--color-header-border-green);
   `}
   ${props => props.typePomodoro === 'long_break' && css`
     transition: border-bottom 0.5s ease-in-out 0s;
-    border-bottom: 1px solid var(--color-header-border-blue);
+    border-bottom: 0.1rem solid var(--color-header-border-blue);
   `}
 
   div {
@@ -55,15 +61,15 @@ export const Header = styled.div<typeProps>`
   }
 
   h1 {
-    padding: 20px;
-    font-size: 20px;
+    padding: 2rem;
+    font-size: 2rem;
     display: flex;
     flex-direction: row;
     justify-content: baseline;
   }
 
   h1 svg {
-    margin-right: 5px;
+    margin-right: 0.5rem;
   }
 
   div {
@@ -73,14 +79,16 @@ export const Header = styled.div<typeProps>`
 `;
 
 export const ContentOfButtonsHeader = styled.div<typeProps>`
-  height: 32px;
+  height: 3.2rem;
+
+
   .button-default {
     border: 0;
-    border-radius: 5px;
-    height: 32px;
-    width: 87px;
-    padding: 8px 12px;
-    font-size: 13px;
+    border-radius: 0.5rem;
+    height: 3.2rem;
+    width: 8.7rem;
+    padding: 0.8rem 1.2rem;
+    font-size: 1.3rem;
 
     display: flex;
     align-items: center;
@@ -94,34 +102,44 @@ export const ContentOfButtonsHeader = styled.div<typeProps>`
     }
 
     svg {
-      margin-right: 5px;
+      margin-right: 0.5rem;
     }
 
     /* Only user login image of profile */
     img {
-      width: 20px;
-      border-radius: 4px;
+      width: 2rem;
+      border-radius: 0.4rem;
 
-      border: 2px solid var(--color-header-white-opacity);
+      border: 0.2rem solid var(--color-header-white-opacity);
     }
 
     &:nth-child(1)  {
-      margin: 0px 10px;
+      margin: 0rem 1rem;
+    }
+
+    @media (max-width: 395px) {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      width: 40px;
+      padding: 8px;
     }
 
   }
 
   .login-user{
-    width: 28px;
-    height: 28px;
-    border-radius: 4px;
-    border: 2px solid rgba(255, 255, 255, 0.2);
-    margin-left: 8px;
+    width: 2.8rem;
+    height: 2.8rem;
+    border-radius: 0.4rem;
+    border: 0.2rem solid rgba(255, 255, 255, 0.2);
+    margin-left: 0.8rem;
 
     img {
       width: 100%;
       height: 100%;
-      border-radius: 4px;
+      border-radius: 0.4rem;
       border-color: rgba(255, 255, 255, 0.2);
     }
   }
@@ -129,27 +147,27 @@ export const ContentOfButtonsHeader = styled.div<typeProps>`
 
 
 export const Time = styled.div<typeProps>`
-  margin-top: 50px;
+  margin-top: 5rem;
   border: none !important;
 
   ${props => props.typePomodoro === 'pomodoro' && css`
     transition: border background-color 0.5s ease-in-out 0s;
-    border: 1px solid var(--color-secondary-orange);
+    border: 0.1rem solid var(--color-secondary-orange);
     background-color: var(--color-secondary-orange);
   `}
   ${props => props.typePomodoro === 'short_break' && css`
     transition: border background-color 0.5s ease-in-out 0s;
-    border: 1px solid var(--color-secondary-green);
+    border: 0.1rem solid var(--color-secondary-green);
     background-color: var(--color-secondary-green);
   `}
   ${props => props.typePomodoro === 'long_break' && css`
     transition: border background-color 0.5s ease-in-out 0s;
-    border: 1px solid var(--color-secondary-blue);
+    border: 0.1rem solid var(--color-secondary-blue);
     background-color: var(--color-secondary-blue);
   `}
 
-  border-radius: 6px;
-  padding: 25px 12px;
+  border-radius: 0.6rem;
+  padding: 2.5rem 1.2rem;
   color: #eee;
 
   display: flex;
@@ -163,55 +181,55 @@ export const Time = styled.div<typeProps>`
   }
 
   div h2 {
-    font-size: 120px;
+    font-size: 12rem;
   }
 
 
 `;
 
 export const LabelTimes = styled.div`
-  margin-top: 30px;
+  margin-top: 3rem;
 
   text-align: center;
-  font-size: 18px;
-  margin-bottom: 25px;
+  font-size: 1.8rem;
+  margin-bottom: 2.5rem;
   color: #eee;
 
 `;
 
 export const TaskOptions = styled.div`
 
-  border-bottom: 2px solid rgba(255, 255, 255, 0.6);
+  border-bottom: 0.2rem solid rgba(255, 255, 255, 0.6);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-bottom: 14px;
+  padding-bottom: 1.4rem;
 
   span {
     color: #eee;
-    font-size: 18px;
+    font-size: 1.8rem;
     font-weight: bold;
   }
 
   button {
     justify-content: center;
     align-items: center;
-    max-width: 32px;
-    max-height: 42px;
+    max-width: 3.2rem;
+    max-height: 4.2rem;
     background: rgba(255, 255, 255, 0.2);
     border: none;
-    border-radius: 6px;
+    border-radius: 0.6rem;
   }
 
   button svg {
-    margin: 5px;
+    margin: 0.5rem;
   }
 `;
 
 export const Footer = styled.div`
-  border: 2px solid #efefef;
-  padding-top: 40px;
-  padding-bottom: 20px;
+  border: 0.2rem solid #efefef;
+  padding-top: 4rem;
+  padding-bottom: 2rem;
   background: #fff;
 
   display: flex;
@@ -220,12 +238,12 @@ export const Footer = styled.div`
   justify-content: center;
 
   .header-footer {
-    margin-bottom: 14px;
+    margin-bottom: 1.4rem;
 
     .header-footer-link {
       color: hsl(357, 12%, 42%);
-      font-size: 16px;
-      margin: 0px 4px;
+      font-size: 1.6rem;
+      margin: 0rem 0.4rem;
       font-weight: bold;
       cursor: pointer;
       text-transform: uppercase;
@@ -233,10 +251,10 @@ export const Footer = styled.div`
   }
 
   .made-header-message {
-    margin-bottom: 20px;
+    margin-bottom: 2rem;
     span {
       color: hsl(357, 12%, 42%);
-      font-size: 16px;
+      font-size: 1.6rem;
 
       strong {
         color: rgb(217 85 80);
@@ -251,7 +269,7 @@ export const Footer = styled.div`
     padding: 0;
 
     small {
-      font-size: 12px;
+      font-size: 1.2rem;
       color: hsl(357, 8%, 60%);
     }
   }
@@ -259,8 +277,8 @@ export const Footer = styled.div`
 
 export const ContainerLinkSocial = styled.div`
   display: flex;
-  max-width: 620px;
-  margin-bottom: 17px;
+  max-width: 62rem;
+  margin-bottom: 1.7rem;
 
   .link-social {
 
@@ -268,16 +286,16 @@ export const ContainerLinkSocial = styled.div`
     justify-content: center;
     align-items: center;
 
-    margin: 6px 4px;
+    margin: 0.6rem 0.4rem;
     background-color: #999;
-    width: 45px;
-    height: 45px;
+    width: 4.5rem;
+    height: 4.5rem;
 
     border-radius: 50%;
   }
 
   .link-social-icon {
-    width: 30px;
+    width: 3rem;
   }
 `;
 
@@ -288,12 +306,12 @@ export const Content = styled.div`
   flex-direction: column;
   align-items: center;
 
-  padding-top: 50px;
+  padding-top: 5rem;
 
   h1 {
-    padding-bottom: 20px;
+    padding-bottom: 2rem;
     color: #541c1f;
-    width: 620px;
+    width: 62rem;
   }
 
   div {
@@ -301,42 +319,42 @@ export const Content = styled.div`
     flex-direction: column;
     align-items: flex-start;
 
-    width: 620px;
-    margin-bottom: 18px;
+    width: 62rem;
+    margin-bottom: 1.8rem;
 
     h2 {
       color: #5e2b2f;
-      margin-top: 25px;
+      margin-top: 2.5rem;
     }
 
     h2::after {
       content: '';
       display: block;
-      width: 24px;
-      padding-top: 8px;
-      border-bottom: 4px solid var(--color-primary-orange);
+      width: 2.4rem;
+      padding-top: 0.8rem;
+      border-bottom: 0.4rem solid var(--color-primary-orange);
       opacity: 0.6;
     }
 
     ol {
-      margin: 16px 0;
-      font-size: 16px;
-      padding-left: 25px;
+      margin: 1.6rem 0;
+      font-size: 1.6rem;
+      padding-left: 2.5rem;
 
       li {
-        margin: 12px 0;
+        margin: 1.2rem 0;
         color: #785e60;
         line-height: 1.6em;
       }
     }
 
     ul {
-      margin: 16px 0;
-      font-size: 18px;
-      padding-left: 25px;
+      margin: 1.6rem 0;
+      font-size: 1.8rem;
+      padding-left: 2.5rem;
 
       li {
-        margin: 12px 0;
+        margin: 1.2rem 0;
         color: #785e60;
         line-height: 1.6em;
         display: list-item;
@@ -355,8 +373,8 @@ export const Content = styled.div`
     p {
       color: #7c6365;
       line-height: 1.6em;
-      margin-top: 18px;
-      font-size: 18px;
+      margin-top: 1.8rem;
+      font-size: 1.8rem;
 
       a {
         font-weight: bold;

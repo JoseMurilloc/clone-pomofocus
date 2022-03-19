@@ -8,7 +8,7 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  padding: 30px 0;
+  padding: 3rem 0;
   overflow-x: hidden;
 `;
 
@@ -19,16 +19,16 @@ export const Main = styled.div`
 
 export const Header = styled.div`
 
-  width: 350px;
-  padding: 0 20px;
+  width: 35rem;
+  padding: 0 2rem;
 
   display: flex;
   flex-direction: column;
   align-items: center;
 
 
-  h1 { 
-    font-size: 40px;
+  h1 {
+    font-size: 4rem;
     color: #FFF;
 
     display: flex;
@@ -36,27 +36,27 @@ export const Header = styled.div`
     align-items: center;
 
     svg {
-      margin-right: 8px;
+      margin-right: 0.8rem;
     }
   }
 
   h2 {
     color: #FFF;
     opacity: 0.8;
-    margin: 25px 0px 38px 0px;
-    font-size: 18px;
+    margin: 2.5rem 0rem 3.8rem 0rem;
+    font-size: 1.8rem;
   }
 `;
 
 export const Form = styled.div`
-  width: 350px;
+  width: 35rem;
   background-color: #FFF;
-  padding: 8px 18px 32px 18px;
-  border-radius: 8px;
+  padding: 0.8rem 1.8rem 3.2rem 1.8rem;
+  border-radius: 0.8rem;
 
   div.containerButtonWithEmail {
     width: 100%;
-    margin-top: 28px;
+    margin-top: 2.8rem;
   }
 
   div.containerOr {
@@ -65,13 +65,13 @@ export const Form = styled.div`
     justify-content: center;
     align-items: center;
 
-    padding: 18px 0 0 0;
+    padding: 1.8rem 0 0 0;
 
     &::before {
       content: '';
       display: inline-block;
       width: 45%;
-      height: 1px;
+      height: 0.1rem;
       background: #EAEAEA;
     }
 
@@ -79,26 +79,26 @@ export const Form = styled.div`
       content: '';
       display: inline-block;
       width: 45%;
-      height: 1px;
+      height: 0.1rem;
       background: #EAEAEA;
     }
 
     span {
       text-transform: lowercase;
-      font-size: 16px;
+      font-size: 1.6rem;
       color: rgb(196, 196, 196);
-      margin: 0 20px;
+      margin: 0 2rem;
     }
   }
 
   div.containerLabelInput {
     width: 100%;
-    margin: 20px 0 8px 0;
+    margin: 2rem 0 0.8rem 0;
 
 
     span {
       text-transform: uppercase;
-      font-size: 11px;
+      font-size: 1.1rem;
       font-weight: 700;
       color: rgb(196, 196, 196);
     }
@@ -109,13 +109,13 @@ export const Form = styled.div`
 
   div.containerForgotPassword {
     width: 100%;
-    margin-top: 20px;
+    margin-top: 2rem;
     display: flex;
     justify-content: center;
     align-items: center;
 
     span {
-      font-size: 14px;
+      font-size: 1.4rem;
       cursor: pointer;
       color: rgba(0, 0, 0, 0.4);
       text-decoration: underline;
@@ -129,19 +129,19 @@ export const Footer = styled.div`
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
-  margin-top: 24px;
+  margin-top: 2.4rem;
 
   span {
-    margin-bottom: 8px;
-    font-size: 16px;
+    margin-bottom: 0.8rem;
+    font-size: 1.6rem;
     color: rgba(255, 255, 255, 0.8);
     text-align: center;
   }
 
   a {
-    margin-bottom: 8px;
+    margin-bottom: 0.8rem;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 1.6rem;
     color: rgba(255, 255, 255, 0.8);
     text-align: center;
     text-decoration: underline;
