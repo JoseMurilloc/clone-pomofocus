@@ -2,7 +2,6 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { AddTask } from '.';
 import { IconMain } from '../../commons/icons/Main';
-import userEvent from '@testing-library/user-event';
 
 describe('<AddTask />', () => {
   it('Button renders name correctly', () => {

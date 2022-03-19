@@ -11,8 +11,8 @@ export function AddResource({label, block = false, ...rest}: Props) {
   return (
     <Container {...rest}>
       <span>{label}</span>
-      {!!block && (
-        <FaLock size={13} color="#8d8d8d" />
+      {block && (
+        <FaLock data-testid="icon" size={13} color="#8d8d8d" />
       )}
     </Container>
   )
