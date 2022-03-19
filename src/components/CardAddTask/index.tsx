@@ -1,4 +1,6 @@
 import React from "react";
+import { MdArrowDropDown, MdArrowDropUp } from "react-icons/md";
+import { AddResource } from "../AddResource";
 import {
   Container,
   Footer,
@@ -24,17 +26,28 @@ export function CardAddTask({onVisible}: Props) {
         </WrapperInputWhatWorkingOn>
 
         <WrapperEstPomodoro>
-          <h3>Est Pomodoros</h3>
+          <h3 className="title-est-pomodoro">Est Pomodoros</h3>
           <aside>
-            <input type="number" />
-            <button>UP</button>
-            <button>Down</button>
+            <input
+              type="number"
+              className="counter-est-pomodoro"
+              value={1}
+            />
+            <button className="button-counter-pomodoro">
+              <MdArrowDropUp size={24} color="#7d7d7d" />
+            </button>
+            <button className="button-counter-pomodoro">
+              <MdArrowDropDown size={24} color="#7d7d7d" />
+            </button>
           </aside>
         </WrapperEstPomodoro>
 
         <WrapperAddOptions>
-          <button>Add note</button>
-          <button>Add project</button>
+          <AddResource label="+ Add note" />
+          <AddResource
+            label="+ Add project"
+            block={true}
+          />
         </WrapperAddOptions>
       </Main>
 
