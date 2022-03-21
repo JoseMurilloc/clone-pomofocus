@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react';
 import { CardAddTask } from '.';
 import userEvent from '@testing-library/user-event';
 
-describe('<CardResource />', () => {
+describe('<CardAddTask />', () => {
   it('should be able of close card add task on click and cancel', () => {
     const onVisibleMock = jest.fn()
 
