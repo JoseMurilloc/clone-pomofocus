@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { MdArrowDropDown, MdArrowDropUp } from "react-icons/md";
 import { AddResource } from "../AddResource";
 import {
@@ -15,6 +15,8 @@ type Props = {
 }
 
 export function CardAddTask({onVisible}: Props) {
+  const [note, setNote] = useState(false);
+
   return (
     <Container data-testid="card-add-task">
       <Main>
@@ -31,7 +33,6 @@ export function CardAddTask({onVisible}: Props) {
             <input
               type="number"
               className="counter-est-pomodoro"
-              value={1}
             />
             <button className="button-counter-pomodoro">
               <MdArrowDropUp size={24} color="#7d7d7d" />
@@ -42,8 +43,20 @@ export function CardAddTask({onVisible}: Props) {
           </aside>
         </WrapperEstPomodoro>
 
-        <WrapperAddOptions>
-          <AddResource label="+ Add note" />
+        <WrapperAddOptions directionColumn={note}>
+          {note ? (
+            <textarea
+              data-testid="note-est-pomodoro"
+              className="note-est-pomodoro"
+              cols={45}
+              rows={5}
+            />
+          ): (
+            <AddResource
+              label="+ Add note"
+              onClick={() => setNote(true)}
+            />
+          )}
           <AddResource
             label="+ Add project"
             block={true}
