@@ -119,8 +119,29 @@ export const WrapperEstPomodoro = styled.section`
   }
 
 `;
-export const WrapperAddOptions = styled.section`
+
+type WrapperAddOptionsProps = {
+  directionColumn: boolean;
+}
+
+export const WrapperAddOptions = styled.section<WrapperAddOptionsProps>`
   width: 100%;
   display: flex;
   margin-top: 16px;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  flex-direction: ${({directionColumn}) => directionColumn
+    ? 'column' : 'row'
+  };
+
+  .note-est-pomodoro {
+    border: none;
+    background-color: #efefef;
+    border-radius: 6px;
+    margin-bottom: 14px;
+    padding: 14px 10px;
+    font-size: 15px;
+    color: rgb(85, 85, 85);
+  }
 `;

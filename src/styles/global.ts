@@ -17,7 +17,7 @@ export default createGlobalStyle`
     height: 100vh;
   }
 
-  html, body, button, input {
+  html, body, button, input, textarea {
     font-family: 'Varela Round', sans-serif;
   }
 
