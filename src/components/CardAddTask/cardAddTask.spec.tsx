@@ -47,6 +47,37 @@ describe('<CardAddTask />', () => {
 
     expect(screen.getByTestId('note-est-pomodoro')).toBeInTheDocument()
   });
+
+  it('should not be able decrement counter with number negative', () => {
+    const onVisibleMock = jest.fn()
+
+    render(<CardAddTask onVisible={onVisibleMock}/>)
+
+    const buttonDecrementElement = screen.getByTestId('button-decrement')
+
+    userEvent.click(buttonDecrementElement)
+    userEvent.click(buttonDecrementElement)
+
+    const inputCounterElement =  screen.getByTestId('input-counter')
+
+    expect(inputCounterElement).toHaveValue(0)
+  })
+
+  it('should be able increment counter est', () => {
+    const onVisibleMock = jest.fn()
+
+    render(<CardAddTask onVisible={onVisibleMock}/>)
+
+    const buttonIncrementElement = screen.getByTestId('button-increment')
+
+    userEvent.click(buttonIncrementElement)
+    userEvent.click(buttonIncrementElement)
+    userEvent.click(buttonIncrementElement)
+
+    const inputCounterElement =  screen.getByTestId('input-counter')
+
+    expect(inputCounterElement).toHaveValue(3)
+  })
 })
 
 
