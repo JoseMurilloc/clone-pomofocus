@@ -16,6 +16,15 @@ type Props = {
 
 export function CardAddTask({onVisible}: Props) {
   const [note, setNote] = useState(false);
+  const [countEst, setCountEst] = useState(0);
+
+  const increment = () => setCountEst(state => state + 1);
+  const decrement = () => {
+    if (countEst) {
+      setCountEst(state => state - 1)
+    }
+  };
+
 
   return (
     <Container data-testid="card-add-task">
@@ -33,11 +42,21 @@ export function CardAddTask({onVisible}: Props) {
             <input
               type="number"
               className="counter-est-pomodoro"
+              value={countEst}
+              data-testid="input-counter"
             />
-            <button className="button-counter-pomodoro">
+            <button
+              className="button-counter-pomodoro"
+              onClick={increment}
+              data-testid="button-increment"
+            >
               <MdArrowDropUp size={24} color="#7d7d7d" />
             </button>
-            <button className="button-counter-pomodoro">
+            <button
+              className="button-counter-pomodoro"
+              onClick={decrement}
+              data-testid="button-decrement"
+            >
               <MdArrowDropDown size={24} color="#7d7d7d" />
             </button>
           </aside>
