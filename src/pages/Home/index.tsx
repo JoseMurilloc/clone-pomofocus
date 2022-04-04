@@ -63,17 +63,17 @@ export function Home () {
       <Header typePomodoro={typePomodoro}>
         <div>
           <h1>
-            <IconMain.FaCheckCircle size={20} color="#fff" />
+            <IconMain.FaCheckCircle color="#fff" size="2rem" />
             Pomodoro
           </h1>
 
           <ContentOfButtonsHeader typePomodoro={typePomodoro}>
             <button className="button-default">
-              <IconMain.GoGraph size={18} color="#fff" />
+              <IconMain.GoGraph size="1.8rem" color="#fff" />
               <span>Report</span>
             </button>
             <button className="button-default">
-              <IconMain.MdSettings size={18} color="#fff" />
+              <IconMain.MdSettings size="1.8rem" color="#fff" />
               <span>Setting</span>
             </button>
 
@@ -87,7 +87,7 @@ export function Home () {
             ) : (
               <Link to="/login">
                 <button className="button-default">
-                  <IconMain.FaUserCircle size={18} color="#fff" />
+                  <IconMain.FaUserCircle size="1.8rem" color="#fff" />
                   <span>Login</span>
                 </button>
               </Link>
