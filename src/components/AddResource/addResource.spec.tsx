@@ -30,7 +30,7 @@ describe('<AddResource />', () => {
     expect(screen.getByTestId('icon')).toBeInTheDocument();
   })
 
-  it('not should render icon lock when button is not premium resource', () => {
+  it('not should be able render icon lock when button is not premium resource', () => {
     render(
       <AddResource
         label="+ Add project"
