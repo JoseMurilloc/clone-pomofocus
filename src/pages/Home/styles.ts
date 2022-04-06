@@ -3,7 +3,6 @@ import {typeProps} from './types'
 
 
 export const Container = styled.div<typeProps>`
-  width: 100%;
   ${props => props.typePomodoro === 'pomodoro' && css`
     transition: background-color 0.5s ease-in-out 0s;
     background: var(--color-primary-orange);
@@ -30,6 +29,12 @@ export const Header = styled.div<typeProps>`
   height: 6rem;
   margin: 0 auto;
   border-bottom: 0.1rem solid rgba(0, 0, 0, 0.1) !important;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: #eee;
+
 
 
   @media (max-width: 395px) {
@@ -51,14 +56,7 @@ export const Header = styled.div<typeProps>`
     border-bottom: 0.1rem solid var(--color-header-border-blue);
   `}
 
-  div {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    color: #eee;
 
-  }
 
   h1 {
     padding: 2rem;
@@ -86,7 +84,7 @@ export const ContentOfButtonsHeader = styled.div<typeProps>`
     border: 0;
     border-radius: 0.5rem;
     height: 3.2rem;
-    width: 8.7rem;
+    max-width: 8.7rem;
     padding: 0.8rem 1.2rem;
     font-size: 1.3rem;
 
@@ -105,28 +103,9 @@ export const ContentOfButtonsHeader = styled.div<typeProps>`
       margin-right: 0.5rem;
     }
 
-    /* Only user login image of profile */
-    img {
-      width: 2rem;
-      border-radius: 0.4rem;
-
-      border: 0.2rem solid var(--color-header-white-opacity);
-    }
-
     &:nth-child(1)  {
       margin: 0rem 1rem;
     }
-
-    @media (max-width: 395px) {
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      width: 40px;
-      padding: 8px;
-    }
-
   }
 
   .login-user{
@@ -141,6 +120,12 @@ export const ContentOfButtonsHeader = styled.div<typeProps>`
       height: 100%;
       border-radius: 0.4rem;
       border-color: rgba(255, 255, 255, 0.2);
+    }
+  }
+
+  button span{
+    @media (max-width: 450px) {
+      display: none;
     }
   }
 `;
