@@ -28,6 +28,7 @@ import { Link } from 'react-router-dom';
 import { Status } from '../../commons/types/status';
 import { AddTask } from '../../components/AddTask';
 import { CardAddTask } from '../../components/CardAddTask';
+import { options } from '../../utils/optionsPomodoro';
 
 export function Home () {
   const [typePomodoro, setTypePomodoro] = useState<Status>('pomodoro')
@@ -39,12 +40,6 @@ export function Home () {
   const [visibleMenuProfile, setVisibleMenuProfile] = useState(false);
   const [active, setActive] = useState(false);
 
-
-  const options: Option[] = [
-    {status: 'pomodoro', label: 'Pomodoro'},
-    {status: 'short_break', label: 'Short break'},
-    {status: 'long_break', label: 'Long Break'},
-  ]
 
   const startCountdown = React.useCallback(() => {
     setActive(state => !state)
