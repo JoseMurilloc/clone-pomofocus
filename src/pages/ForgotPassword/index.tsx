@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { IconMain } from '../../commons/icons/Main';
+import { Icon } from '../../commons/icons/Main';
 import { Button } from '../../components/Form/Button';
 import { Input } from '../../components/Form/Input';
-import { 
+import {
   Container,
   Header,
   Form,
@@ -17,18 +17,18 @@ export function ForgotPassword() {
       <Main>
         <Header>
           <h1>
-            <IconMain.FaCheckCircle size={55} color="#fff" />
+            <Icon.FaCheckCircle size={55} color="#fff" />
             Pomofocus
           </h1>
           <h2>Reset password</h2>
         </Header>
         <Form>
-         
+
           <div className="containerLabelInput">
             <span>Email</span>
           </div>
           <div className="containerInput">
-            <Input 
+            <Input
               placeholder="example@gmail.com"
               type="email"
             />

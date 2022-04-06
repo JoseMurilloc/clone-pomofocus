@@ -6,14 +6,14 @@ import { AiFillTwitterCircle } from 'react-icons/ai';
 import { FaPlusCircle, FaUserCircle } from 'react-icons/fa';
 import { FaCheckCircle, FaFacebook, FaProductHunt } from 'react-icons/fa'
 
-export const IconMain = {
+export const Icon = {
   GrMoreVertical,
   MdSettings,
   GoGraph,
   AiFillTwitterCircle,
   FaPlusCircle,
-  FaCheckCircle, 
-  FaFacebook, 
+  FaCheckCircle,
+  FaFacebook,
   FaProductHunt,
   FaUserCircle
 }
