@@ -1,14 +1,6 @@
-import React, { ButtonHTMLAttributes, Dispatch } from 'react'
-import { Status } from '../../commons/types/status'
+import React from 'react'
 import {Container} from './styles'
-
-interface ButtonOptionalProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  activeButton: boolean
-  label: string
-  status: Status
-  typePomo: Status,
-  setTypePomo: Dispatch<React.SetStateAction<Status>>;
-}
+import { ButtonOptionalProps } from './types'
 
 export function ButtonOptional({
   activeButton, label, status, typePomo, setTypePomo, ...rest
@@ -16,16 +8,16 @@ export function ButtonOptional({
 
   const handleEnablePomodoroButtonStyle = React.useCallback(() => {
     return typePomo === status
-  }, [typePomo, status]) 
+  }, [typePomo, status])
 
   const handleSelectedTypePomo = React.useCallback(() => {
     setTypePomo(status)
   }, [setTypePomo, status])
 
   return (
-    <Container 
-      disabled={activeButton} 
-      enableButton={handleEnablePomodoroButtonStyle()} 
+    <Container
+      disabled={activeButton}
+      enableButton={handleEnablePomodoroButtonStyle()}
       onClick={handleSelectedTypePomo}
       types={typePomo}
       {...rest}

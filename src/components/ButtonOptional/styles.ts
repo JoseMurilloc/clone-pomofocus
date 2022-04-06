@@ -11,15 +11,15 @@ export const Container = styled.button<ButtonOptionalProps>`
   color: #eee;
   font-weight: bold;
   border: 0;
-  font-size: 16px;
-  padding: 5px 12px;
-  border-radius: 6px;
-  
+  font-size: 1.6rem;
+  padding: 0.5rem 1.2rem;
+  border-radius: 0.6rem;
+
   ${props => props.enableButton && css`
     background: rgba(0, 0, 0, 0.15);
   `};
-  
+
   & + button {
-    margin-left: 20px;
+    margin-left: 2rem;
   }
 `;
