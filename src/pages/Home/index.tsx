@@ -1,34 +1,26 @@
 import React, { useState } from 'react';
-import {IconMain} from '../../commons/icons/Main';
-
-import stripeImage from '../../assets/stripe.png';
-import twitterImage from '../../assets/twitter.png';
-import facebookImage from '../../assets/facebook.png';
+import {Icon} from '../../commons/icons/Main';
 
 import MenuProfile from '../../components/MenuProfile';
 import { ButtonOptional } from '../../components/ButtonOptional'
 import {
   Main,
-  Header,
   Time,
   LabelTimes,
   TaskOptions,
   Container,
   Content,
-  Footer,
-  ContentOfButtonsHeader,
-  ContainerLinkSocial,
 } from './styles';
 
 import Profile from '../../components/Profile';
 import { Countdown } from '../../components/Countdown';
 
-import {Option} from './types'
-import { Link } from 'react-router-dom';
 import { Status } from '../../commons/types/status';
 import { AddTask } from '../../components/AddTask';
 import { CardAddTask } from '../../components/CardAddTask';
 import { options } from '../../utils/optionsPomodoro';
+import { Header } from '../../components/Header';
+import { Footer } from '../../components/Footer';
 
 export function Home () {
   const [typePomodoro, setTypePomodoro] = useState<Status>('pomodoro')
@@ -55,39 +47,7 @@ export function Home () {
         />) }
       { visibleMenuProfile && <MenuProfile /> }
 
-      <Header typePomodoro={typePomodoro}>
-        <h1>
-          <IconMain.FaCheckCircle color="#fff" size="2rem" />
-          Pomodoro
-        </h1>
-
-        <ContentOfButtonsHeader typePomodoro={typePomodoro}>
-          <button className="button-default">
-            <IconMain.GoGraph size="1.8rem" color="#fff" />
-            <span>Report</span>
-          </button>
-          <button className="button-default">
-            <IconMain.MdSettings size="1.8rem" color="#fff" />
-            <span>Setting</span>
-          </button>
-
-          { false ? (
-            <div className="login-user">
-              <img
-                src="https://lh3.googleusercontent.com/a-/AOh14Ggsx2eT_A6emvGukBj5QrwRCqyJNSxD-5j5FvFLpw=s96-c"
-                alt="profile"
-              />
-            </div>
-          ) : (
-            <Link to="/login">
-              <button className="button-default">
-                <IconMain.FaUserCircle size="1.8rem" color="#fff" />
-                <span>Login</span>
-              </button>
-            </Link>
-          ) }
-        </ContentOfButtonsHeader>
-      </Header>
+      <Header typePomodoro={typePomodoro} />
       <Main>
         <Time typePomodoro={typePomodoro}>
           <div>
@@ -116,14 +76,14 @@ export function Home () {
         <TaskOptions>
           <span>Tasks</span>
           <button>
-            <IconMain.GrMoreVertical color="#fff" size={16} />
+            <Icon.GrMoreVertical color="#fff" size={16} />
           </button>
         </TaskOptions>
         {addTask ? (
           <CardAddTask onVisible={setAddTask}/>
         ) : (
           <AddTask
-            Icon={IconMain.FaPlusCircle}
+            Icon={Icon.FaPlusCircle}
             label="Add Task"
             onClick={() => setAddTask(state => !state)}
           />
@@ -182,43 +142,7 @@ export function Home () {
 
 
       </Content>
-      <Footer>
-        <div className="header-footer">
-          <a className="header-footer-link" href="/">Home</a>
-          <a className="header-footer-link" href="/">Privacy</a>
-          <a className="header-footer-link" href="/">Contact</a>
-          <a className="header-footer-link" href="/">Simples page</a>
-        </div>
-        <ContainerLinkSocial>
-          <a href="/" className="link-social">
-            <img
-              className="link-social-icon"
-              src={facebookImage}
-              alt="sprite-icon"
-            />
-          </a>
-          <a href="/" className="link-social">
-            <img
-              className="link-social-icon"
-              src={twitterImage}
-              alt="sprite-icon"
-            />
-          </a>
-          <a href="/" className="link-social">
-            <img
-              className="link-social-icon"
-              src={stripeImage}
-              alt="sprite-icon"
-            />
-          </a>
-        </ContainerLinkSocial>
-        <div className="made-header-message">
-          <span>{`Made with <3 by`} <strong>Yuya Uzu</strong></span>
-        </div>
-        <div className="copyright">
-          <small>©Pomofocus 2019. All Rights Reserved.</small>
-        </div>
-      </Footer>
+      <Footer />
     </Container>
   );
 }
