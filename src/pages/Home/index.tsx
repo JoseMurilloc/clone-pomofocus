@@ -23,19 +23,17 @@ import { Header } from '../../components/Header';
 import { Footer } from '../../components/Footer';
 
 
-import {useDispatch, useSelector} from 'react-redux';
+import {useSelector} from 'react-redux';
 import { State } from '../../store/rootReducer';
 
 export function Home () {
 
   const modal = useSelector((state: State) => state.modal);
-  const dispatch = useDispatch();
 
   const [typePomodoro, setTypePomodoro] = useState<Status>('pomodoro')
   const [addTask, setAddTask] = useState(false)
 
   const [activeButton, setActiveButton] = useState(false);
-  const [visibleMenuProfile, setVisibleMenuProfile] = useState(false);
   const [active, setActive] = useState(false);
 
 
@@ -46,8 +44,8 @@ export function Home () {
 
   return (
     <Container typePomodoro={typePomodoro}>
-      { modal.isProfileModel && (<Profile />) }
-      { visibleMenuProfile && <MenuProfile /> }
+      { modal.isProfileModal && (<Profile />) }
+      { modal.isMenuProfileModal && <MenuProfile /> }
 
       <Header typePomodoro={typePomodoro} />
       <Main>
