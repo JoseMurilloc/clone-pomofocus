@@ -2,16 +2,15 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { Home } from '.';
 import userEvent from '@testing-library/user-event';
-import { BrowserRouter } from 'react-router-dom';
-
+import { Providers } from '../../utils/providersTest';
 
 describe('<Home />', () => {
   it('should able show the cardAddTask in page on click buttonAddTask', () => {
 
     render(
-      <BrowserRouter>
+      <Providers>
         <Home/>
-      </BrowserRouter>
+      </Providers>
     )
 
     const buttonAddTask = screen.getByRole('button', {
@@ -26,9 +25,9 @@ describe('<Home />', () => {
   it('should able a NOT show the cardAddTask in page on click buttonAddTask', () => {
 
     render(
-      <BrowserRouter>
+      <Providers>
         <Home/>
-      </BrowserRouter>
+      </Providers>
     )
     const cardAddTask = screen.queryByTestId('card-add-task')
 
@@ -37,9 +36,9 @@ describe('<Home />', () => {
 
   it('should be able open and close the card add task', () => {
     render(
-      <BrowserRouter>
+      <Providers>
         <Home/>
-      </BrowserRouter>
+      </Providers>
     )
 
     userEvent.click(screen.getByRole('button', {name: /Add Task/}))
