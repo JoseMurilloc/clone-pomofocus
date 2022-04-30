@@ -1,7 +1,8 @@
 import {Action, ActionTypes, IModalState} from './types';
 
 const INITIAL_STATE: IModalState = {
-  isProfileModel: false
+  isProfileModal: false,
+  isMenuProfileModal: false
 };
 
 export default function modal(
@@ -13,6 +14,8 @@ export default function modal(
       return { ...state, isProfileModel: action.payload.profileState };
     case ActionTypes.closeProfileModal:
       return { ...state, isProfileModel: false };
+    case ActionTypes.toggleMenuProfileModal:
+      return { ...state, isMenuProfileModal: !state.isMenuProfileModal };
     default:
       return state;
   }
