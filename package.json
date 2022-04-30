@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@reduxjs/toolkit": "^1.8.1",
     "@testing-library/jest-dom": "^5.16.2",
     "@testing-library/react": "^12.1.4",
     "@testing-library/user-event": "^7.1.2",
@@ -15,7 +16,7 @@
     "react-redux": "^7.2.6",
     "react-router-dom": "^6.2.1",
     "react-scripts": "5.0.0",
-    "redux": "^4.1.2",
+    "redux": "^4.2.0",
     "serialize-javascript": "^3.1.0",
     "styled-components": "^5.1.0",
     "websocket-extensions": "^0.1.4"
