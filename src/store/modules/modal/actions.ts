@@ -13,3 +13,10 @@ export function closeProfileModalAction() {
     payload: {},
   };
 }
+
+export function toggleMenuProfileModalAction() {
+  return {
+    type: ActionTypes.toggleMenuProfileModal,
+    payload: {},
+  };
+}
