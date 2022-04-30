@@ -2,29 +2,29 @@ import React from 'react';
 
 import { Container, Modal } from './styles';
 import { IoMdClose } from 'react-icons/io';
+import { useDispatch } from 'react-redux';
+import { closeProfileModalAction } from '../../store/modules/modal/actions';
 
-interface ProfileProps {
-  visible: boolean
-  setVisible: React.Dispatch<React.SetStateAction<boolean>>;
-}
+interface ProfileProps {}
 
 
-function Profile({ visible, setVisible }: ProfileProps) { 
+function Profile(props: ProfileProps) {
+  const dispatch = useDispatch();
   return (
-    <Container>
+    <Container {...props}>
       <Modal>
         <header>
           <h1>Profile</h1>
-          <button 
-            onClick={() => setVisible(state => !state )} 
+          <button
+            onClick={() => dispatch(closeProfileModalAction())}
             className="close"
           >
             <IoMdClose size={25} color="rgb(187, 187, 187)"/>
           </button>
         </header>
         <main>
-          <img 
-            src="https://avatars.githubusercontent.com/u/43470555?v=4" 
+          <img
+            src="https://avatars.githubusercontent.com/u/43470555?v=4"
             alt="profile"
           />
 
@@ -32,9 +32,10 @@ function Profile({ visible, setVisible }: ProfileProps) {
 
         </main>
         <footer>
-          <button 
+          <button
             className="buttonCancel"
-            onClick={() => setVisible(state => !state)}
+
+            onClick={() => dispatch(closeProfileModalAction())}
           >
             Cancel
           </button>
