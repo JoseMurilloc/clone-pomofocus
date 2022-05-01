@@ -1,16 +1,8 @@
 import React, { useState } from 'react';
 import {Icon} from '../../commons/icons/Main';
 
-import MenuProfile from '../../components/MenuProfile';
 import { ButtonOptional } from '../../components/ButtonOptional'
-import {
-  Main,
-  Time,
-  LabelTimes,
-  TaskOptions,
-  Container,
-  Content,
-} from './styles';
+import * as S from './styles';
 
 import Profile from '../../components/Profile';
 import { Countdown } from '../../components/Countdown';
@@ -43,12 +35,12 @@ export function Home () {
   }, [])
 
   return (
-    <Container typePomodoro={typePomodoro}>
+    <S.Container typePomodoro={typePomodoro}>
       { modal.isProfileModal && (<Profile />) }
 
       <Header typePomodoro={typePomodoro} />
-      <Main>
-        <Time typePomodoro={typePomodoro}>
+      <S.Main>
+        <S.Time typePomodoro={typePomodoro}>
           <div>
             {options.map(option => (
               <ButtonOptional
@@ -68,16 +60,16 @@ export function Home () {
             typePomo={typePomodoro}
             activeButton={activeButton}
           />
-        </Time>
-        <LabelTimes>
+        </S.Time>
+        <S.LabelTimes>
           <span>Time to work!</span>
-        </LabelTimes>
-        <TaskOptions>
+        </S.LabelTimes>
+        <S.TaskOptions>
           <span>Tasks</span>
           <button>
             <Icon.GrMoreVertical color="#fff" size={16} />
           </button>
-        </TaskOptions>
+        </S.TaskOptions>
         {addTask ? (
           <CardAddTask onVisible={setAddTask}/>
         ) : (
@@ -87,8 +79,8 @@ export function Home () {
             onClick={() => setAddTask(state => !state)}
           />
         )}
-      </Main>
-      <Content>
+      </S.Main>
+      <S.Content>
 
         <h1>An online Pomodoro Timer to boost your productivity</h1>
 
@@ -140,8 +132,8 @@ export function Home () {
         </div>
 
 
-      </Content>
+      </S.Content>
       <Footer />
-    </Container>
+    </S.Container>
   );
 }
