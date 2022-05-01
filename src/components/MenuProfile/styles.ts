@@ -8,7 +8,7 @@ export const Container = styled.div`
   box-shadow: rgb(0 0 0 / 15%) 0rem 1rem 2rem, rgb(0 0 0 / 10%) 0rem 0.3rem 0.6rem;
 
   position: absolute;
-  right: 36rem;
+  right: 0rem;
   top: 6rem;
 
   ul {
