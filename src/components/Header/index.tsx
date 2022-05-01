@@ -46,6 +46,7 @@ export function Header ({typePomodoro}: Props) {
             <img
               src="https://lh3.googleusercontent.com/a-/AOh14Ggsx2eT_A6emvGukBj5QrwRCqyJNSxD-5j5FvFLpw=s96-c"
               alt="profile"
+              className="image-profile"
             />
           </button>
         ) : (
