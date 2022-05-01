@@ -45,7 +45,6 @@ export function Home () {
   return (
     <Container typePomodoro={typePomodoro}>
       { modal.isProfileModal && (<Profile />) }
-      { modal.isMenuProfileModal && <MenuProfile /> }
 
       <Header typePomodoro={typePomodoro} />
       <Main>
