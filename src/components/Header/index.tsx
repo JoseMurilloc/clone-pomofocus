@@ -2,10 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Icon } from '../../commons/icons/Main';
 import { Status } from '../../commons/types/status';
-import {useDispatch} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 
 import * as S from './styles'
 import { toggleMenuProfileModalAction } from '../../store/modules/modal/actions';
+import { State } from '../../store/rootReducer';
+import MenuProfile from '../MenuProfile';
 
 type Props = {
   typePomodoro: Status
@@ -13,9 +15,13 @@ type Props = {
 
 export function Header ({typePomodoro}: Props) {
   const dispatch = useDispatch();
+  const modal = useSelector((state: State) => state.modal);
+
 
   return (
-    <S.Header typePomodoro={typePomodoro}>
+    <S.Container>
+     <S.Header typePomodoro={typePomodoro}>
+      { modal.isMenuProfileModal && <MenuProfile /> }
       <h1>
         <Icon.FaCheckCircle color="#fff" size="2rem" />
         Pomodoro
@@ -35,6 +41,7 @@ export function Header ({typePomodoro}: Props) {
           <button
             onClick={() => dispatch(toggleMenuProfileModalAction())}
             className="login-user"
+            data-testid="button-menu"
           >
             <img
               src="https://lh3.googleusercontent.com/a-/AOh14Ggsx2eT_A6emvGukBj5QrwRCqyJNSxD-5j5FvFLpw=s96-c"
@@ -50,6 +57,7 @@ export function Header ({typePomodoro}: Props) {
           </Link>
         ) }
       </S.ContentOfButtonsHeader>
-    </S.Header>
+     </S.Header>
+    </S.Container>
   )
 }
