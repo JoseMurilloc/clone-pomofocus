@@ -8,7 +8,7 @@ import {RiDeleteBin6Line} from 'react-icons/ri'
 
 function MenuProfile ()  {
   return (
-    <Container>
+    <Container data-testid="menu-profile">
       <ul>
         <li>
           <button onClick={() => {}}>
