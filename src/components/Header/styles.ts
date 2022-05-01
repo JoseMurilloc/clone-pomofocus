@@ -86,19 +86,25 @@ export const ContentOfButtonsHeader = styled.div<HeaderProps>`
   }
 
   .login-user{
-    width: 2.8rem;
-    height: 2.8rem;
+    width: 3rem;
+    height: 3rem;
     border-radius: 0.4rem;
-    border: 0.2rem solid rgba(255, 255, 255, 0.2);
     margin-left: 0.8rem;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 0;
 
-    img {
-      width: 100%;
-      height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img.image-profile {
+      width: 85%;
+      height: 85%;
       border-radius: 0.4rem;
-      border-color: rgba(255, 255, 255, 0.2);
     }
   }
+
 
   button span{
     @media (max-width: 450px) {
