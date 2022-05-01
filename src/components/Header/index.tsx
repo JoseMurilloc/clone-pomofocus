@@ -41,7 +41,7 @@ export function Header ({typePomodoro}: Props) {
           <button
             onClick={() => dispatch(toggleMenuProfileModalAction())}
             className="login-user"
-            data-testid="button-menu"
+            data-testid="button-toggle-menu"
           >
             <img
               src="https://lh3.googleusercontent.com/a-/AOh14Ggsx2eT_A6emvGukBj5QrwRCqyJNSxD-5j5FvFLpw=s96-c"
