@@ -5,35 +5,13 @@ export type HeaderProps = {
   typePomodoro: Status;
 }
 
-export const Header = styled.header<HeaderProps>`
-  width: 62rem;
-
-  height: 6rem;
-  margin: 0 auto;
-  border-bottom: 0.1rem solid rgba(0, 0, 0, 0.1) !important;
+export const Container = styled.header`
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  color: #eee;
-
-
-  ${props => props.typePomodoro === 'pomodoro' && css`
-    transition: border-bottom 0.5s ease-in-out 0s;
-    border-bottom: 0.1rem solid var(--color-header-border-orange);
-  `}
-  ${props => props.typePomodoro === 'short_break' && css`
-    transition: border-bottom 0.5s ease-in-out 0s;
-    border-bottom: 0.1rem solid var(--color-header-border-green);
-  `}
-  ${props => props.typePomodoro === 'long_break' && css`
-    transition: border-bottom 0.5s ease-in-out 0s;
-    border-bottom: 0.1rem solid var(--color-header-border-blue);
-  `}
-
-
 
   h1 {
+    color: #eee;
     padding: 2rem;
     font-size: 2rem;
     display: flex;
@@ -49,6 +27,31 @@ export const Header = styled.header<HeaderProps>`
     display: flex;
     align-items: center;
   }
+`;
+
+export const Header = styled.div<HeaderProps>`
+  position: relative;
+  border-bottom: 0.1rem solid rgba(0, 0, 0, 0.1) !important;
+  width: 62rem;
+  height: 6rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+
+  ${props => props.typePomodoro === 'pomodoro' && css`
+    transition: border-bottom 0.5s ease-in-out 0s;
+    border-bottom: 0.1rem solid var(--color-header-border-orange);
+  `}
+  ${props => props.typePomodoro === 'short_break' && css`
+    transition: border-bottom 0.5s ease-in-out 0s;
+    border-bottom: 0.1rem solid var(--color-header-border-green);
+  `}
+  ${props => props.typePomodoro === 'long_break' && css`
+    transition: border-bottom 0.5s ease-in-out 0s;
+    border-bottom: 0.1rem solid var(--color-header-border-blue);
+  `}
 `;
 
 export const ContentOfButtonsHeader = styled.div<HeaderProps>`
