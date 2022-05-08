@@ -12,8 +12,9 @@ export default function task(
     case ActionTypes.getAllTask:
       return {...state.tasks}
     case ActionTypes.addNewTask:
-      return {...state, task: [...state.tasks, action.payload.newTask]}
+      return {...state, tasks: [...state.tasks, action.payload.newTask]}
     default:
       return state;
   }
 }
+
