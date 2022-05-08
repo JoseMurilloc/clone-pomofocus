@@ -82,6 +82,7 @@ export const TaskOptions = styled.div`
   justify-content: space-between;
   align-items: center;
   padding-bottom: 1.4rem;
+  margin-bottom: 18px;
 
   span {
     color: #eee;
@@ -101,6 +102,12 @@ export const TaskOptions = styled.div`
 
   button svg {
     margin: 0.5rem;
+  }
+`;
+
+export const ListTask = styled.div`
+  div + div {
+    margin-top: 15px;
   }
 `;
 
