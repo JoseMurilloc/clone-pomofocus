@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { MdArrowDropDown, MdArrowDropUp } from "react-icons/md";
+import { useDispatch } from "react-redux";
+import { addNewTaskAction } from "../../store/modules/task/actions";
 import { AddResource } from "../AddResource";
 import {
   Container,
@@ -17,6 +19,10 @@ type Props = {
 export function CardAddTask({onVisible}: Props) {
   const [note, setNote] = useState(false);
   const [countEst, setCountEst] = useState(0);
+
+  const dispatch = useDispatch()
+
+
 
   const increment = () => setCountEst(state => state + 1);
   const decrement = () => {
@@ -90,7 +96,14 @@ export function CardAddTask({onVisible}: Props) {
         >
           Cancel
         </button>
-        <button className="button-default button-save">
+        <button onClick={() => dispatch(addNewTaskAction({
+          title: 'Titulo exemplo',
+          est: {
+            current: 0,
+            final: 2
+          },
+          note: 'Note exemplo'
+        }))}className="button-default button-save">
           Save
         </button>
       </Footer>
