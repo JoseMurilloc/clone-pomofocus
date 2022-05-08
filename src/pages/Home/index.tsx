@@ -17,10 +17,13 @@ import { Footer } from '../../components/Footer';
 
 import {useSelector} from 'react-redux';
 import { State } from '../../store/rootReducer';
+import { CardTask } from '../../components/CardTask';
+import { ITaskState } from '../../store/modules/task/types';
 
 export function Home () {
 
   const modal = useSelector((state: State) => state.modal);
+  const task = useSelector((state: State) => state.task as ITaskState);
 
   const [typePomodoro, setTypePomodoro] = useState<Status>('pomodoro')
   const [addTask, setAddTask] = useState(false)
@@ -70,6 +73,11 @@ export function Home () {
             <Icon.GrMoreVertical color="#fff" size={16} />
           </button>
         </S.TaskOptions>
+        <S.ListTask>
+          {task.tasks.map(t => (
+            <CardTask task={t} />
+          ))}
+        </S.ListTask>
         {addTask ? (
           <CardAddTask onVisible={setAddTask}/>
         ) : (
