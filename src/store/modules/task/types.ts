@@ -14,6 +14,9 @@ export type ITaskState = {
 
 export type Task = {
   title: string
-  est: number;
-  describe: string;
+  est: {
+    current: number;
+    final: number;
+  };
+  note?: string;
 }
