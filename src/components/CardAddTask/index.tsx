@@ -3,53 +3,74 @@ import { MdArrowDropDown, MdArrowDropUp } from "react-icons/md";
 import { useDispatch } from "react-redux";
 import { addNewTaskAction } from "../../store/modules/task/actions";
 import { AddResource } from "../AddResource";
-import {
-  Container,
-  Footer,
-  Main,
-  WrapperInputWhatWorkingOn,
-  WrapperEstPomodoro,
-  WrapperAddOptions
-} from "./styles";
+import * as S from "./styles";
 
 type Props = {
   onVisible: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 export function CardAddTask({onVisible}: Props) {
-  const [note, setNote] = useState(false);
-  const [countEst, setCountEst] = useState(0);
+  const [title, setTitle] = useState('');
+  const [note, setNote] = useState('');
+  const [estCurrent, setEstCurrent] = useState(1);
+  const [hasNote, setHasNote] = useState(false);
 
   const dispatch = useDispatch()
 
-
-
-  const increment = () => setCountEst(state => state + 1);
+  const increment = () => setEstCurrent(state => state + 1);
   const decrement = () => {
-    if (countEst) {
-      setCountEst(state => state - 1)
+    if (estCurrent) {
+      setEstCurrent(state => state - 1)
     }
   };
 
+  async function handleSubmitTask() {
+   if (!title) {
+     return;
+   }
+
+    try {
+      dispatch(addNewTaskAction({
+        title,
+        est: {
+          current: 0,
+          final: estCurrent
+        },
+        note: hasNote ? note : '',
+        finally: false
+      }))
+    } catch {
+      console.log('Error')
+    }
+    finally {
+      setTitle('');
+      setEstCurrent(1);
+      setNote('');
+    }
+  }
+
 
   return (
-    <Container data-testid="card-add-task">
-      <Main>
-        <WrapperInputWhatWorkingOn>
+    <S.Container data-testid="card-add-task">
+      <S.Main>
+        <S.WrapperInputWhatWorkingOn>
           <input
             type="text"
             placeholder="What are your working on?"
+            value={title}
+            onChange={e => setTitle(e.target.value)}
           />
-        </WrapperInputWhatWorkingOn>
+        </S.WrapperInputWhatWorkingOn>
 
-        <WrapperEstPomodoro>
+        <S.WrapperEstPomodoro>
           <h3 className="title-est-pomodoro">Est Pomodoros</h3>
           <aside>
             <input
               type="number"
               className="counter-est-pomodoro"
-              value={countEst}
               data-testid="input-counter"
+              value={estCurrent}
+              onChange={e => setEstCurrent(Number(e.target.value))}
             />
             <button
               className="button-counter-pomodoro"
@@ -66,47 +87,42 @@ export function CardAddTask({onVisible}: Props) {
               <MdArrowDropDown size={24} color="#7d7d7d" />
             </button>
           </aside>
-        </WrapperEstPomodoro>
+        </S.WrapperEstPomodoro>
 
-        <WrapperAddOptions directionColumn={note}>
-          {note ? (
+        <S.WrapperAddOptions directionColumn={hasNote}>
+          {hasNote ? (
             <textarea
               data-testid="note-est-pomodoro"
               className="note-est-pomodoro"
               cols={45}
               rows={5}
+              value={note}
+              onChange={e => setNote(e.target.value)}
             />
           ): (
             <AddResource
               label="+ Add note"
-              onClick={() => setNote(true)}
+              onClick={() => setHasNote(true)}
             />
           )}
           <AddResource
             label="+ Add project"
             block={true}
           />
-        </WrapperAddOptions>
-      </Main>
+        </S.WrapperAddOptions>
+      </S.Main>
 
-      <Footer>
+      <S.Footer>
         <button
           className="button-default button-cancel"
           onClick={() => onVisible(false)}
         >
           Cancel
         </button>
-        <button onClick={() => dispatch(addNewTaskAction({
-          title: 'Titulo exemplo',
-          est: {
-            current: 0,
-            final: 2
-          },
-          note: 'Note exemplo'
-        }))}className="button-default button-save">
+        <button onClick={handleSubmitTask}className="button-default button-save">
           Save
         </button>
-      </Footer>
-    </Container>
+      </S.Footer>
+    </S.Container>
   )
 }
