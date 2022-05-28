@@ -1,20 +1,23 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+import { ContainerProps, HeaderProps } from "./types";
 
-export const Container = styled.div`
+export const Container = styled.div<ContainerProps>`
   width: 100%;
   background-color: #fff;
   border-radius: 4px;
   border: none;
   padding: 10px 15px 15px 15px;
-  border-left: 6px solid transparent;
+  border-left: 6px solid ${({selectedCard}) => selectedCard ? '#111' : 'transparent'};
   box-shadow: rgb(0 0 0 / 10%) 0px 4px 4px;
+  cursor: pointer;
+
 
   &:hover {
-    border-left: 6px solid #dfdfdf;
+    border-left: 6px solid ${({selectedCard}) => selectedCard ? '#111' : '#dfdfdf'};
   }
 `;
 
-export const Header = styled.header`
+export const Header = styled.header<HeaderProps>`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -24,11 +27,23 @@ export const Header = styled.header`
     justify-content: center;
     align-items: center;
 
+    button {
+      cursor: pointer;
+      background: transparent;
+      border: none;
+    }
+
     span {
       color: #555555;
       font-weight: bold;
       font-size: 1.6rem;
       margin-left: 1.6rem;
+
+      ${props => props.completeTask && css`
+        text-decoration: line-through;
+        color: rgb(187, 187, 187);
+      `}
+
     }
   }
 `;
@@ -76,6 +91,7 @@ export const Content = styled.div`
     white-space: pre-wrap;
     background-color: rgb(252, 248, 222);
     color: rgb(96, 85, 21);
+    box-shadow: rgb(0 0 0 / 10%) 0px 1px 0px;
     padding: 10px 12px;
     margin-left: 15px;
     margin-top: 15px;
