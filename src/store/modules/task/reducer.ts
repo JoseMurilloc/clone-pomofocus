@@ -12,7 +12,19 @@ export default function task(
     case ActionTypes.getAllTask:
       return {...state.tasks}
     case ActionTypes.addNewTask:
-      return {...state, tasks: [...state.tasks, action.payload.newTask]}
+      return {
+        ...state,
+        tasks: [...state.tasks, {...action.payload.newTask, finally: false}]
+      }
+    case ActionTypes.toggleStatusTask: {
+      const updatedTask = state
+        .tasks
+        .map(task => task.title === action.payload.titleTask
+          ? {...task, finally: !task.finally}
+          : task
+        )
+      return { ...state, tasks: updatedTask}
+    }
     default:
       return state;
   }
