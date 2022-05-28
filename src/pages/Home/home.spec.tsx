@@ -55,4 +55,27 @@ describe('<Home />', () => {
       .not.toBeInTheDocument();
 
   })
+
+
+  it('not should be able submit new task without title', async () => {
+    render(
+      <Providers>
+        <Home/>
+      </Providers>
+    )
+
+
+    const buttonAddTask = screen.getByTestId('add-task')
+
+    userEvent.click(buttonAddTask)
+
+    const buttonSaveTask = screen.getByRole('button', {
+      name: /Save/
+    })
+
+    userEvent.click(buttonSaveTask)
+
+    expect(screen.queryByTestId('card-task')).not.toBeInTheDocument()
+
+  })
 })
