@@ -13,3 +13,11 @@ export function addNewTaskAction(newTask: Task) {
     payload: {newTask},
   };
 }
+
+
+export function toggleAStatusTaskAction(titleTask: string) {
+  return {
+    type: ActionTypes.toggleStatusTask,
+    payload: {titleTask},
+  };
+}
