@@ -1,6 +1,7 @@
 export enum ActionTypes {
   getAllTask = 'GET_ALL_TASK',
-  addNewTask = 'ADD_NEW_TASK'
+  addNewTask = 'ADD_NEW_TASK',
+  toggleStatusTask = 'TOGGLE_STATUS_TASK'
 }
 
 export type Action = {
@@ -19,4 +20,5 @@ export type Task = {
     final: number;
   };
   note?: string;
+  finally: boolean;
 }
