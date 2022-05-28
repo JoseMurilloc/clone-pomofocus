@@ -30,6 +30,7 @@ export function Home () {
 
   const [activeButton, setActiveButton] = useState(false);
   const [active, setActive] = useState(false);
+  const [selectedTask, setSelectedTask] = useState('');
 
 
   const startCountdown = React.useCallback(() => {
@@ -75,7 +76,11 @@ export function Home () {
         </S.TaskOptions>
         <S.ListTask>
           {task.tasks.map(t => (
-            <CardTask task={t} />
+            <CardTask
+              task={t}
+              selected={selectedTask === t.title}
+              onSelectedTask={setSelectedTask}
+            />
           ))}
         </S.ListTask>
         {addTask ? (
@@ -84,6 +89,7 @@ export function Home () {
           <AddTask
             Icon={Icon.FaPlusCircle}
             label="Add Task"
+            data-testid="add-task"
             onClick={() => setAddTask(state => !state)}
           />
         )}
