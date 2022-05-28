@@ -9,7 +9,7 @@ export function openProfileModalAction(profileState: boolean) {
 
 export function closeProfileModalAction() {
   return {
-    type: ActionTypes.openProfileModal,
+    type: ActionTypes.closeProfileModal,
     payload: {},
   };
 }
