@@ -44,7 +44,7 @@ export function Header ({typePomodoro}: Props) {
             data-testid="button-toggle-menu"
           >
             <img
-              src="https://avatars.githubusercontent.com/u/43470555?v=4"
+              src="https://lh3.googleusercontent.com/a-/AOh14Ggsx2eT_A6emvGukBj5QrwRCqyJNSxD-5j5FvFLpw=s96-c"
               alt="profile"
               className="image-profile"
             />
