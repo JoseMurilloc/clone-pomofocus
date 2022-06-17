@@ -88,10 +88,9 @@ export const ContentOfButtonsHeader = styled.div<HeaderProps>`
   .login-user{
     width: 3rem;
     height: 3rem;
-    border-radius: 0.4rem;
+    background-color: transparent;
     margin-left: 0.8rem;
     border: none;
-    background-color: rgba(255, 255, 255, 0.2);
     padding: 0;
 
     display: flex;
@@ -99,9 +98,11 @@ export const ContentOfButtonsHeader = styled.div<HeaderProps>`
     justify-content: center;
 
     img.image-profile {
-      width: 85%;
-      height: 85%;
-      border-radius: 0.4rem;
+      box-sizing: initial;
+      height: 100%;
+      width: calc(3rem - 3);
+      border-radius: 9px;
+      border: 3px solid rgba(255, 255, 255, 0.2);
     }
   }
 
