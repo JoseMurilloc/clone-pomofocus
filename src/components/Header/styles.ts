@@ -103,6 +103,10 @@ export const ContentOfButtonsHeader = styled.div<HeaderProps>`
       width: calc(3rem - 3);
       border-radius: 9px;
       border: 3px solid rgba(255, 255, 255, 0.2);
+
+      &:hover {
+        opacity: 0.9;
+      }
     }
   }
 
