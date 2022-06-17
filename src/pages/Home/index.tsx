@@ -66,7 +66,8 @@ export function Home () {
           />
         </S.Time>
         <S.LabelTimes>
-          <span>Time to work!</span>
+          <span>#1</span>
+          <span>Time to focus!</span>
         </S.LabelTimes>
         <S.TaskOptions>
           <span>Tasks</span>

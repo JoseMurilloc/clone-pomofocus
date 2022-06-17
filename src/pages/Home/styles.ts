@@ -67,11 +67,19 @@ export const Time = styled.div<typeProps>`
 
 export const LabelTimes = styled.div`
   margin-top: 3rem;
-
   text-align: center;
   font-size: 1.8rem;
   margin-bottom: 2.5rem;
   color: #eee;
+
+  span {
+    display: block;
+  }
+
+  span:first-child {
+    opacity: 0.6;
+    font-size: 1.6rem;
+  }
 
 `;
 
