@@ -20,7 +20,7 @@ export function Header ({typePomodoro}: Props) {
 
   return (
     <S.Container>
-     <S.Header typePomodoro={typePomodoro}>
+      <S.Header typePomodoro={typePomodoro}>
       { modal.isMenuProfileModal && <MenuProfile /> }
       <h1>
         <Icon.FaCheckCircle color="#fff" size="2rem" />
@@ -58,7 +58,7 @@ export function Header ({typePomodoro}: Props) {
           </Link>
         ) }
       </S.ContentOfButtonsHeader>
-     </S.Header>
+      </S.Header>
     </S.Container>
   )
 }
