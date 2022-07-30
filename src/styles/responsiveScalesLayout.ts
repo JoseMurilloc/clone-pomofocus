@@ -1,7 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 
 export const breakPoints = {
-  screenSm: '760px',
+  screenSm: '700px',
   screenMd: '1024px',
   screenLg: '1200px',
   screenXl: '1600px',

@@ -1,23 +1,25 @@
 import React, { useState } from 'react';
-import {Icon} from '../../commons/icons/Main';
 
-import { ButtonOptional } from '../../components/ButtonOptional'
 import * as S from './styles';
 
-import Profile from '../../components/Profile';
-import { Countdown } from '../../components/Countdown';
+import {
+  Profile,
+  Header,
+  Footer,
+  Countdown,
+  CardAddTask,
+  AddTask,
+  ButtonOptional,
+  CardTask
+} from '../../components';
 
 import { Status } from '../../commons/types/status';
-import { AddTask } from '../../components/AddTask';
-import { CardAddTask } from '../../components/CardAddTask';
 import { options } from '../../utils/optionsPomodoro';
-import { Header } from '../../components/Header';
-import { Footer } from '../../components/Footer';
+import {Icon} from '../../commons/icons/Main';
 
 
 import {useSelector} from 'react-redux';
 import { State } from '../../store/rootReducer';
-import { CardTask } from '../../components/CardTask';
 import { ITaskState } from '../../store/modules/task/types';
 
 export function Home () {
