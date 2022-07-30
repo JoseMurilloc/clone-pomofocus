@@ -8,7 +8,7 @@ import { closeProfileModalAction } from '../../store/modules/modal/actions';
 interface ProfileProps {}
 
 
-function Profile(props: ProfileProps) {
+export function Profile(props: ProfileProps) {
   const dispatch = useDispatch();
   return (
     <Container {...props}>
@@ -46,4 +46,3 @@ function Profile(props: ProfileProps) {
   );
 };
 
-export default Profile;
