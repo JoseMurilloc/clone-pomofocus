@@ -30,14 +30,9 @@ export const ResponsiveScalesLayout = createGlobalStyle`
 
   @media screen and (min-width:${breakPoints.screenXl}){
     html {
-      font-size: 81.5%;
+      font-size: 65.5%;
     }
   }
 
-  @media screen and (min-width: ${breakPoints.screenBl}){
-    html {
-      font-size: 100%;
-    }
-  }
 `;
 
